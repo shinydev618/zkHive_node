@@ -1,20 +1,20 @@
-import { Box } from "@mui/material";
-import styled from "styled-components";
-import { NotificationContainer } from "react-notifications";
-import "react-notifications/lib/notifications.css";
+import { Box } from '@mui/material'
+import styled from 'styled-components'
+import 'react-notifications/lib/notifications.css'
+import { Layout } from './layouts/layout'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages'
 
 const App = () => {
   return (
-    <StyledComponent>
-      <NotificationContainer />
-    </StyledComponent>
-  );
-};
+    <>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Layout>
+    </>
+  )
+}
 
-const StyledComponent = styled(Box)`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
-
-export default App;
+export default App
