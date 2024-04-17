@@ -7,10 +7,12 @@ export const TimeLine = ({ steps, active, children }: Props) => (
     <div className="time_line">
       {steps.map((item, index) => (
         <div
-          className={`step ${steps.length - 1 === index ? "last" : ""}`}
+          className={`step ${active === index ? "active" : ""} ${
+            steps.length - 1 === index ? "last" : ""
+          }`}
           key={index}
         >
-          <p>{item.label}</p>
+          <p data-aos="fade-up">{item.label}</p>
           <div className="count">
             <p
               style={{
@@ -39,7 +41,6 @@ export const TimeLine = ({ steps, active, children }: Props) => (
       ))}
       <div className="line"></div>
     </div>
-    {/* <div>{steps[active].children}</div> */}
     {children}
   </TimeLineComponent>
 );

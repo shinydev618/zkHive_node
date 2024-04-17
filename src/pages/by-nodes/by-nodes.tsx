@@ -15,7 +15,7 @@ export const BuyNodes = () => {
   return (
     <BuyNodesComponent>
       <div className="container content">
-        <h1>Buy SVPN NODE</h1>
+        <h1 data-aos="fade-up">Buy SVPN NODE</h1>
 
         {step === 4 ? (
           <Congratulations />
@@ -41,7 +41,7 @@ export const BuyNodes = () => {
               style={{
                 width: "100%",
                 display: "flex",
-                gap: "25px",
+                gap: "10px",
                 flexDirection: "column",
               }}
             >

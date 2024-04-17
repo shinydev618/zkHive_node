@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Checked = styled("div")`
   width: 100%;
+
   .checked_title_wrapper h1 {
     font-family: Inter;
     font-size: 30px;
@@ -45,6 +46,26 @@ export const Checked = styled("div")`
         z-index: 100;
         color: black;
       }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    & {
+      padding-bottom: 4rem;
+    }
+    .checked_grid_buttons {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .checked_title_wrapper h1 {
+      margin-top: 20px;
+      font-size: 30px !important;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 700px) {
+    & {
+      padding-bottom: 2rem;
     }
   }
 `;

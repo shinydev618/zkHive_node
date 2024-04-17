@@ -15,7 +15,7 @@ export const PricePlans = styled("div")`
   .price_grid_buttons {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 32px;
     /* margin-top: 15px; */
     button {
@@ -43,6 +43,15 @@ export const PricePlans = styled("div")`
         z-index: 100;
       }
     }
+
+    .compare_plans {
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 34px;
+      text-align: left;
+      color: #fbda00;
+    }
   }
 
   .price_grid_cards {
@@ -51,5 +60,81 @@ export const PricePlans = styled("div")`
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 32px;
     margin-top: 55px;
+  }
+
+  @media (max-width: 1000px) {
+    .price_title_wrapper h1 {
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .price_grid_buttons {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 192px;
+      height: 100%;
+      margin-top: 9rem;
+    }
+
+    #item-0 {
+      grid-row-start: 1;
+      grid-column-start: 1;
+
+      grid-row-end: 2;
+      grid-column-end: 5;
+    }
+    #item-1 {
+      grid-row-start: 2;
+      grid-column-start: 1;
+
+      grid-row-end: 3;
+      grid-column-end: 5;
+    }
+    #item-2 {
+      grid-row-start: 3;
+      grid-column-start: 1;
+
+      grid-row-end: 4;
+      grid-column-end: 5;
+    }
+    #item-3 {
+      grid-row-start: 4;
+      grid-column-start: 1;
+      grid-row-end: 5;
+      grid-column-end: 5;
+    }
+
+    .compare_plans {
+      text-align: center !important;
+    }
+
+    .price_grid_cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .price_grid_buttons {
+      margin-top: 7rem;
+      gap: 112px;
+    }
+
+    #item-3 {
+      text-align: center !important;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .price_grid_buttons {
+      margin-top: 5rem;
+      gap: 70px;
+    }
+    #item-3 {
+      text-align: center;
+    }
   }
 `;

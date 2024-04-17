@@ -12,6 +12,9 @@ import { avalanche, avalancheFuji } from "wagmi/chains";
 
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({ duration: 1500 });
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [

@@ -7,6 +7,7 @@ export const PriceCard = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: min-content;
   h2 {
     font-family: Inter;
     font-size: 20px;
@@ -34,7 +35,11 @@ export const PriceCard = styled("div")`
   img {
     text-align: center;
   }
+  ul {
+    padding-bottom: 4rem;
+  }
   ul li {
+    margin: 8px 0;
     display: flex;
     align-items: center;
     column-gap: 4px;
@@ -62,6 +67,8 @@ export const PriceCard = styled("div")`
     cursor: pointer;
     margin-top: 5px;
     transition: all 0.3s linear;
+    position: absolute;
+    bottom: 24px;
   }
   button:hover {
     background: #fbda00 !important;

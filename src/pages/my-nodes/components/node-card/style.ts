@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled("div")`
+  cursor: pointer;
   position: relative;
   display: flex;
   width: 100%;

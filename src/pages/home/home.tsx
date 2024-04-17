@@ -5,7 +5,7 @@ export const HomePage = () => {
   const { pathname } = useLocation();
   return (
     <HomeUI>
-      {pathname === "/subcription" ? <h1>Subcription</h1> : <h1>HOME</h1>}
+      <h1 data-aos="fade-up">HOME</h1>
     </HomeUI>
   );
 };

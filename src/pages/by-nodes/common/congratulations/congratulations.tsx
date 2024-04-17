@@ -6,16 +6,20 @@ export const Congratulations = () => {
 
   return (
     <CongratulationsUI>
-      <h1>Congratulations</h1>
-      <p className="text_1">
+      <h1 data-aos="fade-up">Congratulations</h1>
+      <p data-aos="fade-up" className="text_1">
         You have successfully purchased a node. Welcome to Shadow Node!
       </p>
-      <hr className="hr" />
-      <p className="text_2">
+      <hr data-aos="fade-up" className="hr" />
+      <p data-aos="fade-up" className="text_2">
         Your node will be set up within 3 to 6 hours. After this time, you can
         connect your wallet to access the node dashboard.
       </p>
-      <button onClick={() => navigate("/my-node")} className="btn">
+      <button
+        data-aos="fade-up"
+        onClick={() => navigate("/my-node")}
+        className="btn"
+      >
         <span>Go to My Nodes</span>
         <img src={"/assets/images/price-plan-button-fill.png"} />
       </button>

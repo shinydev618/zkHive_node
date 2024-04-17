@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Header as HeaderComponent } from "./style";
 import { HEADER_LINKS } from "../../../constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (open) {
+      setOpen(false);
+    }
+  }, [pathname]);
 
   return (
     <HeaderComponent className="container">
@@ -19,9 +26,13 @@ export const Header = () => {
             </li>
           ))}
           <li>
-            <button>0dxkjhd....JeB73m</button>
+            <button className="btn1">
+              <span>0dxkjhd....JeB73m</span>
+              <img src={"/assets/images/price-plan-button-fill.png"} alt="" />
+            </button>
           </li>
         </ul>
+
         <div onClick={() => setOpen((prev) => !prev)} className="menu">
           <div></div>
           <div></div>

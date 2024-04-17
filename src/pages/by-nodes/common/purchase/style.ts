@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const PurchaseUI = styled("div")`
   width: 100%;
+  margin-top: 9rem;
   .purchase_title_wrapper h1 {
     font-family: Inter;
     font-size: 30px;
@@ -10,7 +11,7 @@ export const PurchaseUI = styled("div")`
     text-align: left;
     color: #fbda00;
     margin-bottom: 0 !important;
-    margin-top: 60px;
+    margin-top: 0px;
   }
 
   .purchase_grid_buttons {
@@ -59,5 +60,23 @@ export const PurchaseUI = styled("div")`
     text-align: left;
     color: #fff;
     margin-top: 35px;
+  }
+
+  @media (max-width: 1000px) {
+    & {
+      margin-top: 0rem;
+    }
+    .purchase_grid_buttons {
+      display: flex;
+    }
+    .purchase_title_wrapper h1 {
+      margin-top: 0px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .last_text {
+      text-align: center;
+    }
   }
 `;

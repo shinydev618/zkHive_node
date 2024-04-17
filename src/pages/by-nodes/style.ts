@@ -20,4 +20,14 @@ export const BuyNodes = styled("section")`
 
   .prices {
   }
+
+  @media (max-width: 700px) {
+    & {
+      padding-top: 110px;
+    }
+    .content h1 {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+  }
 `;

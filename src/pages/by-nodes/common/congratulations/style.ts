@@ -64,4 +64,13 @@ export const CongratulationsUI = styled("div")`
       color: black;
     }
   }
+
+  @media (max-width: 500px) {
+    .text_1 {
+      font-size: 30px;
+    }
+    .text_2 {
+      font-size: 20px;
+    }
+  }
 `;

@@ -51,6 +51,32 @@ export const TimeLine = styled("div")`
     }
   }
   .last {
-    margin-top: 7rem !important;
+    margin-top: 14rem !important;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    .time_line {
+      flex-direction: row;
+      gap: 0px;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
+    .last {
+      margin-top: 0px !important;
+    }
+    .line {
+      display: none;
+    }
+    .step {
+      display: none;
+    }
+    .active {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 `;
