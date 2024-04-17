@@ -1,2 +1,3 @@
-export { Home } from './home'
-export { Nodes } from './nodes'
+export { BuyNodes } from "./by-nodes";
+export { Node } from "./node";
+export { MyNodes } from "./my-nodes";

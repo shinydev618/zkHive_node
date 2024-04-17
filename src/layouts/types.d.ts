@@ -1,4 +1,4 @@
-import react from 'react'
+import react from "react";
 export type Props = {
-  children: react.ReactNode
-}
+  children: react.ReactNode;
+};
