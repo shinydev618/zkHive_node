@@ -37,14 +37,7 @@ export const BuyNodes = () => {
               },
             ]}
           >
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                gap: "10px",
-                flexDirection: "column",
-              }}
-            >
+            <div className="step_content_wrapper">
               <PricePlans setStep={setStep} />
               {step == 1 || step > 1 ? <Checked setStep={setStep} /> : ""}
               {step == 2 || step > 2 ? <Supply setStep={setStep} /> : ""}

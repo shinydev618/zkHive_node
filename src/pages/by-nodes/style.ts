@@ -18,6 +18,13 @@ export const BuyNodes = styled("section")`
     }
   }
 
+  .step_content_wrapper {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+
   .prices {
   }
 

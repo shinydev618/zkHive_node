@@ -53,7 +53,7 @@ export const Header = styled("header")`
     ul {
       display: flex;
       align-items: center;
-      gap: 21px;
+      gap: 30px;
       li {
         list-style: none;
         a {
@@ -68,7 +68,7 @@ export const Header = styled("header")`
             width: 0%;
             height: 1px;
             background: #fbda00;
-            bottom: -10px;
+            bottom: -12px;
             position: absolute;
             transition: all 0.3s linear;
           }
