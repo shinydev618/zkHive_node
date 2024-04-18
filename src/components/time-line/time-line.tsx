@@ -1,31 +1,31 @@
-import { Props } from './types'
+import { Props } from "./types";
 
-import { TimeLine as TimeLineComponent } from './style'
+import { TimeLine as TimeLineComponent } from "./style";
 
 export const TimeLine = ({ steps, active, children, setStep }: Props) => {
   const getColor = (index: number) => {
     const color =
-      active > index ? '#000000' : active === index ? '#FBDA00' : '#454511'
-    return color
-  }
+      active > index ? "#000000" : active === index ? "#FBDA00" : "#454511";
+    return color;
+  };
   return (
     <TimeLineComponent>
-      <div className='time_line'>
+      <div className="time_line">
         {steps.map((item, index) => (
           <div
-            className={`step ${active === index ? 'active' : ''} ${
-              steps.length - 1 === index ? 'last' : ''
+            className={`step ${active === index ? "active" : ""} ${
+              steps.length - 1 === index ? "last" : ""
             }`}
             key={index}
           >
             <p
-              data-aos='zoom-in'
-              className={index > active ? 'step_label' : ''}
+              data-aos="zoom-in"
+              className={index > active ? "step_label" : ""}
             >
               {item.label}
             </p>
             <div
-              className='count'
+              className="count"
               onClick={active > index ? () => setStep(index) : undefined}
             >
               <p
@@ -38,19 +38,19 @@ export const TimeLine = ({ steps, active, children, setStep }: Props) => {
               <img
                 src={
                   active > index
-                    ? '/assets/images/time-line-step-fill.png'
+                    ? "/assets/images/time-line-step-fill.png"
                     : active === index
-                    ? '/assets/images/time-line-step-unfill.png'
-                    : '/assets/images/time-line-step-desabled.png'
+                    ? "/assets/images/time-line-step-unfill.png"
+                    : "/assets/images/time-line-step-desabled.png"
                 }
-                alt=''
+                alt=""
               />
             </div>
           </div>
         ))}
-        <div className='line'></div>
+        <div className="line"></div>
       </div>
       {children}
     </TimeLineComponent>
-  )
-}
+  );
+};

@@ -7,12 +7,15 @@ export const Footer = styled('footer')`
   color: #fff;
   text-align: center;
   font-family: Inter;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 34px;
   text-align: center;
 
   @media (max-width: 1000px) {
     font-size: 18px;
+  }
+  @media (max-width: 430px) {
+    font-size: 15px;
   }
 `

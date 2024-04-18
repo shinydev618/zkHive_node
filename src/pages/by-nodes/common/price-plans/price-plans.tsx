@@ -57,7 +57,7 @@ export const PricePlans = ({ setStep, step }: Props) => {
   return (
     <PricePlansComponent>
       <div className="price_title_wrapper">
-        <h1 data-aos="zoom-in">Choose zkHive Node plan below</h1>
+        <h1>Choose zkHive Node plan below</h1>
       </div>
       <div className={`price_grid_buttons`}>
         <button
