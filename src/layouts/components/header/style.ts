@@ -131,8 +131,8 @@ export const Header = styled('header')`
   @media (max-width: 1000px) {
     max-width: 100%;
     top: 0px;
-    padding: 10px 8px;
-    padding-right: 18px;
+    padding: 10px 4rem;
+    padding-right: calc(4rem + 15px);
     nav {
       .menu {
         display: block !important;

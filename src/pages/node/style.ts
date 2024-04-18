@@ -46,6 +46,7 @@ export const Grid = styled('div')`
   gap: 0px;
   height: 100%;
   gap: 24px;
+  padding: 0 20px;
   #item-0 {
     grid-row-start: 1;
     grid-column-start: 1;
