@@ -8,7 +8,7 @@ export const PriceCard = styled("div")`
   flex-direction: column;
   align-items: center;
   min-height: min-content;
-  transition: all 0.3s linear;
+  transition: all 0.3s linear !important;
   &:hover {
     border-color: #fbda00;
     background-color: #1d1d03;
@@ -56,6 +56,7 @@ export const PriceCard = styled("div")`
     line-height: 26px;
     text-align: center;
     color: #979797;
+    margin-left: 10px;
   }
 
   button {

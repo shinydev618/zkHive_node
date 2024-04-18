@@ -2,7 +2,7 @@ import { Props } from "./types";
 
 import { TimeLine as TimeLineComponent } from "./style";
 
-export const TimeLine = ({ steps, active, children }: Props) => (
+export const TimeLine = ({ steps, active, children, setStep }: Props) => (
   <TimeLineComponent>
     <div className="time_line">
       {steps.map((item, index) => (
@@ -13,7 +13,10 @@ export const TimeLine = ({ steps, active, children }: Props) => (
           key={index}
         >
           <p data-aos="fade-up">{item.label}</p>
-          <div className="count">
+          <div
+            className="count"
+            onClick={active > index ? () => setStep(index) : undefined}
+          >
             <p
               style={{
                 color:

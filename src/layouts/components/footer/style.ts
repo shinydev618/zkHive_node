@@ -11,4 +11,8 @@ export const Footer = styled("footer")`
   font-weight: 500;
   line-height: 34px;
   text-align: center;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
 `;

@@ -51,9 +51,15 @@ export const Checked = styled("div")`
 
   @media (max-width: 1000px) {
     & {
-      padding-bottom: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      padding: 3rem 0;
+      margin-top: 2rem;
     }
     .checked_grid_buttons {
+      /* column-gap: 0px; */
+      padding: 0 1rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     .checked_title_wrapper h1 {
@@ -63,9 +69,13 @@ export const Checked = styled("div")`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 790px) {
     & {
-      padding-bottom: 2rem;
+      gap: 3rem;
+    }
+
+    .checked_title_wrapper h1 {
+      margin-top: 20px;
     }
   }
 `;

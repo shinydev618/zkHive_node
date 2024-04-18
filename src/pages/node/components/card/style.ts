@@ -82,5 +82,14 @@ export const Card = styled("div")`
       margin-left: 50%;
       margin-top: 2rem;
     }
+
+    .content {
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
   }
 `;

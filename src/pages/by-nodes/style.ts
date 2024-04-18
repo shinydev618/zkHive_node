@@ -28,6 +28,11 @@ export const BuyNodes = styled("section")`
   .prices {
   }
 
+  @media (max-width: 1000px) {
+    /* padding: 0 2rem; */
+    width: 100%;
+  }
+
   @media (max-width: 700px) {
     & {
       padding-top: 110px;
@@ -35,6 +40,10 @@ export const BuyNodes = styled("section")`
     .content h1 {
       font-size: 40px;
       margin-bottom: 40px;
+    }
+
+    .step_content_wrapper {
+      padding-bottom: 12rem;
     }
   }
 `;

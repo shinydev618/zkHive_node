@@ -28,6 +28,14 @@ export const Home = styled("section")`
     right: -20px;
     bottom: -65px;
   }
+
+  @media (max-width: 1000px) {
+    padding: 8rem 1rem;
+    overflow-x: hidden;
+    h2 {
+      font-size: 30px;
+    }
+  }
 `;
 
 export const Grid = styled("div")`
@@ -242,5 +250,10 @@ export const Grid = styled("div")`
     justify-content: center;
     align-items: center;
     color: #fbda00;
+  }
+
+  @media (max-width: 1000px) {
+    .item-4 .img-2 {
+    }
   }
 `;

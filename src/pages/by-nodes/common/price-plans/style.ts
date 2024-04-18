@@ -9,7 +9,6 @@ export const PricePlans = styled("div")`
     line-height: 40px;
     text-align: left;
     color: #fbda00;
-    margin-bottom: 50px;
   }
 
   .price_grid_buttons {
@@ -17,7 +16,7 @@ export const PricePlans = styled("div")`
     display: grid;
     column-gap: 32px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
+    margin-top: 50px;
     /* margin-top: 15px; */
     button {
       width: 100%;
@@ -73,9 +72,10 @@ export const PricePlans = styled("div")`
       display: grid;
       grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 192px;
+      gap: 242px;
       height: 100%;
       margin-top: 9rem;
+      padding: 0 1rem;
     }
 
     #item-0 {
@@ -120,8 +120,12 @@ export const PricePlans = styled("div")`
 
   @media (max-width: 750px) {
     .price_grid_buttons {
-      margin-top: 7rem;
-      gap: 112px;
+      /* margin-top: 7rem;
+      gap: 112px; */
+      gap: 152px;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 5rem;
     }
 
     #item-3 {
@@ -132,7 +136,7 @@ export const PricePlans = styled("div")`
   @media (max-width: 450px) {
     .price_grid_buttons {
       margin-top: 5rem;
-      gap: 70px;
+      gap: 120px;
     }
     #item-3 {
       text-align: center;

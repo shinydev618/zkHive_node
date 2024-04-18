@@ -65,6 +65,7 @@ export const PurchaseUI = styled("div")`
   @media (max-width: 1000px) {
     & {
       margin-top: 0rem;
+      padding: 0 1rem;
     }
     .purchase_grid_buttons {
       display: flex;

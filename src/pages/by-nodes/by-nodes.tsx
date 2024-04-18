@@ -12,6 +12,8 @@ import {
 export const BuyNodes = () => {
   const [step, setStep] = useState(0);
 
+  console.log(step);
+
   return (
     <BuyNodesComponent>
       <div className="container content">
@@ -21,6 +23,7 @@ export const BuyNodes = () => {
           <Congratulations />
         ) : (
           <TimeLine
+            setStep={setStep}
             active={step}
             steps={[
               {
@@ -38,8 +41,12 @@ export const BuyNodes = () => {
             ]}
           >
             <div className="step_content_wrapper">
-              <PricePlans setStep={setStep} />
-              {step == 1 || step > 1 ? <Checked setStep={setStep} /> : ""}
+              <PricePlans step={step} setStep={setStep} />
+              {step == 1 || step > 1 ? (
+                <Checked step={step} setStep={setStep} />
+              ) : (
+                ""
+              )}
               {step == 2 || step > 2 ? <Supply setStep={setStep} /> : ""}
               {step == 3 || step > 3 ? <Purchase setStep={setStep} /> : ""}
             </div>

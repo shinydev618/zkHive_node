@@ -31,7 +31,7 @@ const PriceList3 = [
   "$zkHive Rewards",
 ];
 
-export const PricePlans = ({ setStep }: Props) => {
+export const PricePlans = ({ setStep, step }: Props) => {
   const [selectPrice, setSelectPrice] = useState<
     "basic" | "advanced" | "full" | undefined
   >();
@@ -41,12 +41,19 @@ export const PricePlans = ({ setStep }: Props) => {
       setStep(1);
     }
   }, [selectPrice]);
+
+  useEffect(() => {
+    if (step === 0) {
+      setSelectPrice(undefined);
+    }
+  }, [step]);
+
   return (
     <PricePlansComponent>
       <div className="price_title_wrapper">
         <h1 data-aos="fade-up">Choose zkHive Node plan below</h1>
       </div>
-      <div className={` price_grid_buttons`}>
+      <div className={`price_grid_buttons`}>
         <button id="item-0" data-aos="fade-up">
           <span style={{ color: selectPrice === "basic" ? "black" : "" }}>
             {selectPrice === "basic" && <CheckIcon />} Basic

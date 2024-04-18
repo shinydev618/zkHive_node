@@ -16,6 +16,7 @@ export const TimeLine = styled("div")`
       justify-content: center;
       align-items: center;
       z-index: 5;
+      cursor: pointer;
       img {
         /* position: absolute; */
         width: 100%;

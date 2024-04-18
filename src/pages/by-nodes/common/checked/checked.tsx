@@ -2,7 +2,7 @@ import { Props } from "./types";
 import { Checked as CheckedUI } from "./style";
 import { CheckIcon } from "../../../../icons";
 import { useEffect, useState } from "react";
-export const Checked = ({ setStep }: Props) => {
+export const Checked = ({ setStep, step }: Props) => {
   const [isCheck, setIsChek] = useState(false);
 
   useEffect(() => {
@@ -10,6 +10,12 @@ export const Checked = ({ setStep }: Props) => {
       setStep(2);
     }
   }, [isCheck]);
+
+  useEffect(() => {
+    if (step === 1) {
+      setIsChek(false);
+    }
+  }, [step]);
 
   return (
     <CheckedUI>

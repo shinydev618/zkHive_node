@@ -14,7 +14,7 @@ export const MyNodes = () => (
         <button data-aos="fade-up" className="add-btn">
           <img src="/assets/images/add-button.png" alt="" />
           <div className="content">
-            <PlusIcon />
+            <PlusIcon className={"add_icon"} />
             <p>Add New Node</p>
           </div>
         </button>

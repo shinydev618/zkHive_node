@@ -27,15 +27,7 @@ export const PriceCard = ({
           </li>
         ))}
       </ul>
-      <button
-        onClick={onClick}
-        style={{
-          background: priceType === "full" ? "#FBDA00" : "transparent",
-          color: priceType === "full" ? "#000000" : "",
-        }}
-      >
-        {buttonTitle}
-      </button>
+      <button onClick={onClick}>{buttonTitle}</button>
     </PriceCardComponent>
   );
 };

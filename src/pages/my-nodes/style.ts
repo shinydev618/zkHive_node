@@ -13,7 +13,7 @@ export const Wrapper = styled("section")`
       font-size: 60px;
       font-weight: 700;
       line-height: 80px;
-      color: white;
+      color: #fbda00;
     }
   }
 
@@ -52,6 +52,21 @@ export const Wrapper = styled("section")`
       width: 100%;
     }
   }
+
+  @media (max-width: 1000px) {
+    padding: 8rem 1rem;
+
+    .see_more {
+      p {
+        font-size: 16px;
+      }
+    }
+    .content {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
 `;
 
 export const NodeGrid = styled("div")`
@@ -80,6 +95,17 @@ export const NodeGrid = styled("div")`
   @media (max-width: 1000px) {
     & {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .add-btn {
+      p {
+        font-size: 20px;
+      }
+      .content {
+        .add_icon {
+          width: 60px;
+        }
+      }
     }
   }
 

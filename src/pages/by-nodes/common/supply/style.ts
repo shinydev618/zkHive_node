@@ -58,28 +58,39 @@ export const SupplyUI = styled("div")`
 
   @media (max-width: 1000px) {
     & {
+      /* padding: 0; */
     }
     .supply_grid_buttons {
       margin-top: 10rem;
       grid-row-gap: 10rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       grid-template-rows: repeat(3, minmax(0, 1fr));
+      padding: 0 1rem;
       .supply_text {
         grid-column: span 1 / span 1;
         text-align: center;
       }
     }
     .supply_title_wrapper h1 {
-      margin-top: 40px;
+      /* margin-top: 40px; */
       font-size: 30px !important;
       text-align: center;
     }
   }
 
   @media (max-width: 700px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      /* margin-top: 2rem; */
+      gap: 3rem;
+    }
     .supply_grid_buttons {
       margin-top: 4rem;
       grid-row-gap: 4rem;
+    }
+    .supply_title_wrapper h1 {
+      margin-top: 20px;
     }
   }
 `;
