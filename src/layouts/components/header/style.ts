@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Header = styled("header")`
+export const Header = styled('header')`
   min-height: 90px;
   width: 100%;
   background: #363607;
@@ -49,6 +49,9 @@ export const Header = styled("header")`
       color: white;
       z-index: 10;
       transition: all 0.3s linear;
+      img {
+        width: 59.04;
+      }
     }
     ul {
       display: flex;
@@ -64,7 +67,7 @@ export const Header = styled("header")`
 
           position: relative;
           &::before {
-            content: "";
+            content: '';
             width: 0%;
             height: 1px;
             background: #fbda00;
@@ -127,13 +130,10 @@ export const Header = styled("header")`
 
   @media (max-width: 1000px) {
     max-width: 100%;
-    /* width: 100%; */
     top: 0px;
     padding: 10px 8px;
-    padding-right: 25px;
+    padding-right: 18px;
     nav {
-      /* padding: 0px 10px 0px 4px; */
-      padding: 0px 0rem;
       .menu {
         display: block !important;
         z-index: 30;
@@ -163,4 +163,4 @@ export const Header = styled("header")`
       margin-top: 10px;
     }
   }
-`;
+`
