@@ -11,6 +11,10 @@ import { publicProvider } from "wagmi/providers/public";
 import { avalanche, avalancheFuji } from "wagmi/chains";
 
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({ duration: 1500, once: true });
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
@@ -44,7 +48,9 @@ root.render(
   <React.StrictMode>
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </RainbowKitProvider>
     </WagmiConfig>
   </React.StrictMode>
