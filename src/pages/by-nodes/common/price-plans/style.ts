@@ -12,18 +12,12 @@ export const PricePlans = styled("div")`
     margin-bottom: 50px;
   }
 
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .price_grid_buttons {
     width: 100%;
     display: grid;
     column-gap: 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
     /* margin-top: 15px; */
     button {
       width: 100%;

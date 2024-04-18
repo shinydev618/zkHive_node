@@ -8,6 +8,11 @@ export const PriceCard = styled("div")`
   flex-direction: column;
   align-items: center;
   min-height: min-content;
+  transition: all 0.3s linear;
+  &:hover {
+    border-color: #fbda00;
+    background-color: #1d1d03;
+  }
   h2 {
     font-family: Inter;
     font-size: 20px;

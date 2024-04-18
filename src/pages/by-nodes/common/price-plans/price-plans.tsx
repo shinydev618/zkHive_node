@@ -46,11 +46,7 @@ export const PricePlans = ({ setStep }: Props) => {
       <div className="price_title_wrapper">
         <h1 data-aos="fade-up">Choose zkHive Node plan below</h1>
       </div>
-      <div
-        className={` price_grid_buttons ${
-          selectPrice ? "grid-cols-4" : "grid-cols-3"
-        }`}
-      >
+      <div className={` price_grid_buttons`}>
         <button id="item-0" data-aos="fade-up">
           <span style={{ color: selectPrice === "basic" ? "black" : "" }}>
             {selectPrice === "basic" && <CheckIcon />} Basic
@@ -90,12 +86,6 @@ export const PricePlans = ({ setStep }: Props) => {
             alt=""
           />
         </button>
-        {selectPrice && (
-          <a href="#" id="item-3" className="compare_plans">
-            {" "}
-            Compare plans
-          </a>
-        )}
       </div>
       {!selectPrice && (
         <div className="price_grid_cards">

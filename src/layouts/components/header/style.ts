@@ -128,9 +128,11 @@ export const Header = styled("header")`
   @media (max-width: 1000px) {
     max-width: 100%;
     top: 0px;
+    padding: 10px 8px;
+    padding-right: 25px;
     nav {
       /* padding: 0px 10px 0px 4px; */
-      padding: 0px 2rem;
+      padding: 0px 0rem;
       .menu {
         display: block !important;
         z-index: 30;
@@ -144,11 +146,13 @@ export const Header = styled("header")`
       min-height: 110vh;
       flex-direction: column;
       width: 100%;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: start;
       background: #545433;
       top: -15px;
       transition: all 0.3s linear;
+      padding-left: 1.5rem;
+      padding-top: 10rem;
     }
 
     nav ul.active {

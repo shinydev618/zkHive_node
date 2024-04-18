@@ -10,10 +10,10 @@ export const PriceCard = ({
 }: Props) => {
   return (
     <PriceCardComponent
-      style={{
-        borderColor: priceType === "full" ? "#FBDA00" : "",
-        background: priceType === "full" ? "#1D1D03" : "transparent",
-      }}
+      // style={{
+      //   borderColor: priceType === "full" ? "#FBDA00" : "",
+      //   background: priceType === "full" ? "#1D1D03" : "transparent",
+      // }}
       data-aos="fade-up"
     >
       <img src="/assets/images/logo.png" alt="" />
