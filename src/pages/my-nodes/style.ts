@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-export const Wrapper = styled("section")`
+export const Wrapper = styled('section')`
   width: 100%;
   min-height: 100vh;
   background-color: black;
@@ -31,6 +31,7 @@ export const Wrapper = styled("section")`
   .see_more {
     margin-top: 60px;
     border: none;
+    padding: 0 20px;
     outline: none;
     cursor: pointer;
     background: transparent;
@@ -68,14 +69,15 @@ export const Wrapper = styled("section")`
       }
     }
   }
-`;
+`
 
-export const NodeGrid = styled("div")`
+export const NodeGrid = styled('div')`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   height: 100%;
   margin-top: 60px;
+  padding: 0 20px;
   img {
     width: 100%;
   }
@@ -96,7 +98,7 @@ export const NodeGrid = styled("div")`
   @media (max-width: 1000px) {
     & {
       grid-template-columns: 1fr 1fr;
-      padding: 0 2rem;
+      padding: 0 4rem;
     }
 
     .add-btn {
@@ -117,4 +119,4 @@ export const NodeGrid = styled("div")`
       grid-template-columns: 1fr;
     }
   }
-`;
+`

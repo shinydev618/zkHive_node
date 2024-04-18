@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const PricePlans = styled('div')`
+export const PricePlans = styled("div")`
   width: 100%;
   .price_title_wrapper h1 {
     font-family: Inter;
@@ -62,8 +62,11 @@ export const PricePlans = styled('div')`
   }
 
   @media (max-width: 1000px) {
+    .price_title_wrapper {
+      padding: 0 4rem;
+    }
     .price_title_wrapper h1 {
-      font-size: 26px;
+      font-size: 22px;
       text-align: center;
     }
 
@@ -142,4 +145,4 @@ export const PricePlans = styled('div')`
       text-align: center;
     }
   }
-`
+`;

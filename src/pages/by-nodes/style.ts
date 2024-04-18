@@ -5,8 +5,8 @@ export const BuyNodes = styled('section')`
   min-height: 100vh;
   background-color: black;
   padding-top: 195px;
-
   .content {
+    padding: 0 20px;
     h1 {
       font-family: Inter;
       font-size: 60px;
