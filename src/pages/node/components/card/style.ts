@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Card = styled("div")`
-  /* border: 3px solid #545433; */
+export const Card = styled('div')`
   height: 100%;
   width: 100%;
   border-radius: 24px;
@@ -56,7 +55,6 @@ export const Card = styled("div")`
     cursor: pointer;
     img {
       position: absolute;
-      /* width: 100%; */
     }
     span {
       position: absolute;
@@ -77,8 +75,6 @@ export const Card = styled("div")`
   @media (max-width: 1000px) {
     .button_wrapper {
       position: static;
-      /* margin: 0 auto !important;
-       */
       margin-left: 50%;
       margin-top: 2rem;
     }
@@ -92,4 +88,4 @@ export const Card = styled("div")`
       }
     }
   }
-`;
+`

@@ -65,10 +65,10 @@ export const CongratulationsUI = styled('div')`
     }
   }
   @media (max-width: 1000px) {
-    padding: 0 1rem;
+    padding: 0 4rem;
   }
   @media (max-width: 500px) {
-    padding: 0 1rem;
+    padding: 0 4rem;
     .text_1 {
       font-size: 30px;
     }

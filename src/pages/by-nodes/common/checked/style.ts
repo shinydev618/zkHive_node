@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Checked = styled("div")`
+export const Checked = styled('div')`
   width: 100%;
 
   .checked_title_wrapper h1 {
@@ -54,11 +54,10 @@ export const Checked = styled("div")`
       display: flex;
       flex-direction: column;
       gap: 4rem;
-      padding: 3rem 0;
+      padding: 3rem 4rem;
       margin-top: 2rem;
     }
     .checked_grid_buttons {
-      /* column-gap: 0px; */
       padding: 0 1rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -78,4 +77,4 @@ export const Checked = styled("div")`
       margin-top: 20px;
     }
   }
-`;
+`
