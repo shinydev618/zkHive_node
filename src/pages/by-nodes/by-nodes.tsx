@@ -9,6 +9,21 @@ import {
   Supply,
 } from './common'
 
+const steps = [
+  {
+    label: 'Step',
+  },
+  {
+    label: 'Step',
+  },
+  {
+    label: 'Step',
+  },
+  {
+    label: 'Step',
+  },
+]
+
 export const BuyNodes = () => {
   const [step, setStep] = useState(0)
 
@@ -20,24 +35,7 @@ export const BuyNodes = () => {
         {step === 4 ? (
           <Congratulations />
         ) : (
-          <TimeLine
-            setStep={setStep}
-            active={step}
-            steps={[
-              {
-                label: 'Step',
-              },
-              {
-                label: 'Step',
-              },
-              {
-                label: 'Step',
-              },
-              {
-                label: 'Step',
-              },
-            ]}
-          >
+          <TimeLine setStep={setStep} active={step} steps={steps}>
             <div className='step_content_wrapper'>
               <PricePlans step={step} setStep={setStep} />
               {step == 1 || step > 1 ? (

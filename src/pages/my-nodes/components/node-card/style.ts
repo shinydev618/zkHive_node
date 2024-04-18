@@ -9,6 +9,7 @@ export const Card = styled("div")`
   justify-content: center;
   align-items: center;
   position: relative;
+  transition: all 0.3s linear !important;
   p {
     font-family: Inter;
     font-size: 40px;
@@ -21,6 +22,10 @@ export const Card = styled("div")`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
   }
 
   @media (max-width: 1000px) {

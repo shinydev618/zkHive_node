@@ -1,1 +1,1 @@
-export * from "./price-plans";
+export * from './price-plans'

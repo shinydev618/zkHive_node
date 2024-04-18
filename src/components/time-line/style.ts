@@ -1,10 +1,14 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-export const TimeLine = styled("div")`
+export const TimeLine = styled('div')`
   display: flex;
   gap: 60px;
   .time_line {
     gap: 85px;
+  }
+
+  .step_label {
+    color: #454511 !important;
   }
   .step {
     display: flex;
@@ -18,7 +22,6 @@ export const TimeLine = styled("div")`
       z-index: 5;
       cursor: pointer;
       img {
-        /* position: absolute; */
         width: 100%;
       }
       p {
@@ -80,4 +83,4 @@ export const TimeLine = styled("div")`
       flex-direction: column;
     }
   }
-`;
+`

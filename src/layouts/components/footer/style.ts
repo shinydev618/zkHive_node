@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Footer = styled("footer")`
+export const Footer = styled('footer')`
   width: 100%;
   background: black;
   padding: 30px 0;
@@ -15,4 +15,4 @@ export const Footer = styled("footer")`
   @media (max-width: 1000px) {
     font-size: 18px;
   }
-`;
+`
