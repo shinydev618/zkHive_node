@@ -6,7 +6,6 @@ export const BuyNodes = styled('section')`
   background-color: black;
   padding-top: 195px;
   .content {
-    padding: 0 20px;
     h1 {
       font-family: Inter;
       font-size: 60px;
@@ -33,7 +32,7 @@ export const BuyNodes = styled('section')`
     width: 100%;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     & {
       padding-top: 110px;
     }

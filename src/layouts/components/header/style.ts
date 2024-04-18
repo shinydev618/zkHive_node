@@ -163,4 +163,8 @@ export const Header = styled('header')`
       margin-top: 10px;
     }
   }
+
+  @media (max-width: 750px) {
+    padding: 10px 1rem;
+  }
 `

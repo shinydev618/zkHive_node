@@ -65,7 +65,7 @@ export const SupplyUI = styled('div')`
       grid-row-gap: 10rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       grid-template-rows: repeat(3, minmax(0, 1fr));
-      padding: 0 1rem;
+      /* padding: 0 1rem; */
       .supply_text {
         grid-column: span 1 / span 1;
         text-align: center;
@@ -77,11 +77,12 @@ export const SupplyUI = styled('div')`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     & {
       display: flex;
       flex-direction: column;
       gap: 3rem;
+      padding: 0 1rem;
     }
     .supply_grid_buttons {
       margin-top: 3rem;
