@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const CongratulationsUI = styled("div")`
+export const CongratulationsUI = styled('div')`
   max-width: 835px;
   margin: auto;
   h1 {
@@ -64,8 +64,11 @@ export const CongratulationsUI = styled("div")`
       color: black;
     }
   }
-
+  @media (max-width: 1000px) {
+    padding: 0 4rem;
+  }
   @media (max-width: 500px) {
+    padding: 0 4rem;
     .text_1 {
       font-size: 30px;
     }
@@ -73,4 +76,4 @@ export const CongratulationsUI = styled("div")`
       font-size: 20px;
     }
   }
-`;
+`

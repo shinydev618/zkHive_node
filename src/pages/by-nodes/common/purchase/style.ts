@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-export const PurchaseUI = styled("div")`
+export const PurchaseUI = styled('div')`
   width: 100%;
   margin-top: 9rem;
   .purchase_title_wrapper h1 {
@@ -65,7 +65,7 @@ export const PurchaseUI = styled("div")`
   @media (max-width: 1000px) {
     & {
       margin-top: 0rem;
-      padding: 0 1rem;
+      padding: 0 4rem;
     }
     .purchase_grid_buttons {
       display: flex;
@@ -80,4 +80,4 @@ export const PurchaseUI = styled("div")`
       text-align: center;
     }
   }
-`;
+`

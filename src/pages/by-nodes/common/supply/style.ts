@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const SupplyUI = styled("div")`
+export const SupplyUI = styled('div')`
   width: 100%;
   .supply_title_wrapper h1 {
     font-family: Inter;
@@ -58,10 +58,10 @@ export const SupplyUI = styled("div")`
 
   @media (max-width: 1000px) {
     & {
-      /* padding: 0; */
+      padding: 0 4rem;
     }
     .supply_grid_buttons {
-      margin-top: 10rem;
+      margin-top: 7rem;
       grid-row-gap: 10rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       grid-template-rows: repeat(3, minmax(0, 1fr));
@@ -72,7 +72,6 @@ export const SupplyUI = styled("div")`
       }
     }
     .supply_title_wrapper h1 {
-      /* margin-top: 40px; */
       font-size: 30px !important;
       text-align: center;
     }
@@ -82,15 +81,14 @@ export const SupplyUI = styled("div")`
     & {
       display: flex;
       flex-direction: column;
-      /* margin-top: 2rem; */
       gap: 3rem;
     }
     .supply_grid_buttons {
-      margin-top: 4rem;
+      margin-top: 3rem;
       grid-row-gap: 4rem;
     }
     .supply_title_wrapper h1 {
       margin-top: 20px;
     }
   }
-`;
+`

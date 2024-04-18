@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const BuyNodes = styled("section")`
+export const BuyNodes = styled('section')`
   width: 100%;
   min-height: 100vh;
   background-color: black;
@@ -22,6 +22,7 @@ export const BuyNodes = styled("section")`
     width: 100%;
     display: flex;
     gap: 10px;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -29,7 +30,6 @@ export const BuyNodes = styled("section")`
   }
 
   @media (max-width: 1000px) {
-    /* padding: 0 2rem; */
     width: 100%;
   }
 
@@ -46,4 +46,4 @@ export const BuyNodes = styled("section")`
       padding-bottom: 12rem;
     }
   }
-`;
+`

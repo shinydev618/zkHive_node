@@ -1,7 +1,9 @@
 export type Props = {
-  priceType: "basic" | "advanced" | "full";
-  onClick: () => void;
-  items: string[];
-  title: string;
-  buttonTitle: string;
-};
+  priceType: 'basic' | 'advanced' | 'full'
+  onClick: () => void
+  items: string[]
+  title: string
+  buttonTitle: string
+  selectPrice?: string
+  selected?: string
+}

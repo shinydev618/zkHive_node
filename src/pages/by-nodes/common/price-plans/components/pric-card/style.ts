@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const PriceCard = styled("div")`
+export const PriceCard = styled('div')`
   border: 3px #363607 solid;
   padding: 24px;
   border-radius: 20px;
@@ -80,4 +80,13 @@ export const PriceCard = styled("div")`
     background: #fbda00 !important;
     color: black;
   }
-`;
+
+  @media (max-width: 1000px) {
+    & {
+      display: none;
+    }
+    &.active {
+      display: block !important;
+    }
+  }
+`

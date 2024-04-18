@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
-export const Home = styled("section")`
+export const Home = styled('section')`
   width: 100%;
   min-height: 100vh;
   background-color: #000000;
@@ -36,9 +36,9 @@ export const Home = styled("section")`
       font-size: 30px;
     }
   }
-`;
+`
 
-export const Grid = styled("div")`
+export const Grid = styled('div')`
   display: grid;
   margin-top: 36px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -100,6 +100,7 @@ export const Grid = styled("div")`
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
+    padding: 0 4rem;
     height: 100%;
     h2 {
       font-size: 40px !important;
@@ -256,4 +257,4 @@ export const Grid = styled("div")`
     .item-4 .img-2 {
     }
   }
-`;
+`
