@@ -17,7 +17,7 @@ export const BuyNodes = () => {
   return (
     <BuyNodesComponent>
       <div className="container content">
-        <h1 data-aos="fade-up">Buy SVPN NODE</h1>
+        <h1 data-aos="fade-up">Buy ZKHIVE NODE</h1>
 
         {step === 4 ? (
           <Congratulations />

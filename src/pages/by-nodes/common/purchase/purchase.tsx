@@ -18,7 +18,7 @@ export const Purchase = ({ setStep }: Props) => (
     </div>
     <p data-aos="fade-up" className="last_text">
       By clicking on “Pay Now”, a Metamask pop-up will appear for processing the
-      payment of 0.3 ETH to Shadow Node.
+      payment of 0.3 ETH to zkHive Node.
     </p>
   </PurchaseUI>
 );

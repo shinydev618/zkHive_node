@@ -21,7 +21,7 @@ export const Checked = ({ setStep, step }: Props) => {
     <CheckedUI>
       <div className="checked_title_wrapper">
         <h1 data-aos="fade-up">
-          Do you hold at least a 0.25% Supply of SVPN tokens?
+          Do you hold at least a 0.25% Supply of ZKHIVE tokens?
         </h1>
       </div>
       <div className="checked_grid_buttons">

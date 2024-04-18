@@ -8,7 +8,7 @@ export const Congratulations = () => {
     <CongratulationsUI>
       <h1 data-aos="fade-up">Congratulations</h1>
       <p data-aos="fade-up" className="text_1">
-        You have successfully purchased a node. Welcome to Shadow Node!
+        You have successfully purchased a node. Welcome to zkHive Node!
       </p>
       <hr data-aos="fade-up" className="hr" />
       <p data-aos="fade-up" className="text_2">

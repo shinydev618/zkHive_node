@@ -5,7 +5,7 @@ export const HEADER_LINKS = [
   },
   {
     path: "/subcription",
-    label: "Buy VPN Subcription",
+    label: "Buy zkHive Subcription",
   },
   {
     path: "/buy-node",
