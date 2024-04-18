@@ -169,6 +169,8 @@ export const Grid = styled('div')`
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     height: 100%;
+    padding: 0 1rem;
+
     h2 {
       font-size: 30px !important;
     }

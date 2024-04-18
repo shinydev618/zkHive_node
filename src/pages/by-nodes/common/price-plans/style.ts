@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const PricePlans = styled("div")`
+export const PricePlans = styled('div')`
   width: 100%;
   .price_title_wrapper h1 {
     font-family: Inter;
@@ -63,7 +63,7 @@ export const PricePlans = styled("div")`
 
   @media (max-width: 1000px) {
     .price_title_wrapper {
-      padding: 0 4rem;
+      padding: 0 3rem;
     }
     .price_title_wrapper h1 {
       font-size: 22px;
@@ -77,7 +77,7 @@ export const PricePlans = styled("div")`
       gap: 242px;
       height: 100%;
       margin-top: 9rem;
-      padding: 0 4rem;
+      padding: 0 2rem;
       span {
         font-size: 16px;
       }
@@ -124,11 +124,19 @@ export const PricePlans = styled("div")`
   }
 
   @media (max-width: 750px) {
+    .price_title_wrapper {
+      padding: 0 1rem;
+    }
+    .price_grid_cards {
+      padding: 0 1rem;
+      padding-top: 4rem;
+    }
     .price_grid_buttons {
       gap: 152px;
       display: flex;
       flex-direction: column;
       padding-bottom: 5rem;
+      padding: 0 1rem;
     }
 
     #item-3 {
@@ -145,4 +153,4 @@ export const PricePlans = styled("div")`
       text-align: center;
     }
   }
-`;
+`

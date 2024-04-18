@@ -29,7 +29,7 @@ export const BuyNodes = () => {
 
   return (
     <BuyNodesComponent>
-      <div className='container content'>
+      <div className=' content container'>
         <h1 data-aos='zoom-in'>Buy ZKHIVE NODE</h1>
 
         {step === 4 ? (

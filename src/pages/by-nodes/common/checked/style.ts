@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Checked = styled('div')`
   width: 100%;
-
   .checked_title_wrapper h1 {
     font-family: Inter;
     font-size: 30px;
@@ -58,7 +57,6 @@ export const Checked = styled('div')`
       margin-top: 2rem;
     }
     .checked_grid_buttons {
-      padding: 0 1rem;
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     .checked_title_wrapper h1 {
@@ -71,6 +69,7 @@ export const Checked = styled('div')`
   @media (max-width: 790px) {
     & {
       gap: 3rem;
+      padding: 3rem 1rem;
     }
 
     .checked_title_wrapper h1 {

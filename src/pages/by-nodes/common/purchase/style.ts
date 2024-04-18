@@ -80,4 +80,8 @@ export const PurchaseUI = styled('div')`
       text-align: center;
     }
   }
+
+  @media (max-width: 750px) {
+    padding: 0 1rem;
+  }
 `

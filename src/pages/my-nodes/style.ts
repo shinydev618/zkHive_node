@@ -69,6 +69,12 @@ export const Wrapper = styled('section')`
       }
     }
   }
+
+  @media (max-width: 750px) {
+    .see_more {
+      padding: 0 1rem;
+    }
+  }
 `
 
 export const NodeGrid = styled('div')`
@@ -113,10 +119,11 @@ export const NodeGrid = styled('div')`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     & {
       margin-top: 1rem;
       grid-template-columns: 1fr;
+      padding: 0 1rem;
     }
   }
 `
