@@ -7,7 +7,7 @@ export const Home = styled('section')`
   padding-top: 186px;
   h2 {
     font-family: Inter;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 80px;
     text-align: center;

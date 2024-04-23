@@ -8,7 +8,7 @@ export const BuyNodes = styled('section')`
   .content {
     h1 {
       font-family: Inter;
-      font-size: 60px;
+      font-size: 50px;
       font-weight: 700;
       line-height: 80px;
       text-align: center;

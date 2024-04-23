@@ -10,7 +10,7 @@ export const Wrapper = styled('section')`
     h1 {
       text-align: center;
       font-family: Inter;
-      font-size: 60px;
+      font-size: 50px;
       font-weight: 700;
       line-height: 80px;
       color: #fbda00;
@@ -77,6 +77,10 @@ export const Wrapper = styled('section')`
   @media (max-width: 750px) {
     .see_more {
       padding: 0 1rem;
+    }
+    .content h1 {
+      font-size: 40px;
+      margin-bottom: 40px;
     }
   }
 `
