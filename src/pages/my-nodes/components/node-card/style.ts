@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Card = styled("div")`
+export const Card = styled('div')`
   cursor: pointer;
   position: relative;
   display: flex;
@@ -10,6 +10,7 @@ export const Card = styled("div")`
   align-items: center;
   position: relative;
   transition: all 0.3s linear !important;
+  height: 233px;
   p {
     font-family: Inter;
     font-size: 40px;
@@ -33,4 +34,4 @@ export const Card = styled("div")`
       font-size: 20px;
     }
   }
-`;
+`

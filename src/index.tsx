@@ -3,12 +3,14 @@ import './index.css'
 import '@rainbow-me/rainbowkit/styles.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import reportWebVitals from './reportWebVitals'
+import { WagmiProvider, http } from 'wagmi'
+import { mainnet } from 'wagmi/chains'
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { getDefaultConfig } from '@rainbow-me/rainbowkit'
 
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
-import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-import { publicProvider } from 'wagmi/providers/public'
-import { avalanche, avalancheFuji } from 'wagmi/chains'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+import reportWebVitals from './reportWebVitals'
 
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
@@ -16,45 +18,30 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 AOS.init({ duration: 1500, once: true })
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [
-    // avalanche,
-    // avalancheFuji,
-    ...(process.env.REACT_APP_ENABLE_TESTNET === 'true'
-      ? [avalancheFuji]
-      : [avalanche]),
-  ],
-  [publicProvider()]
-)
-
-const { connectors } = getDefaultWallets({
-  appName: 'FishMiner',
-  projectId: process.env.REACT_APP_PROJECT_ID as any,
-  chains,
-})
-
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-  webSocketPublicClient,
-})
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+const queryClient = new QueryClient()
+
+const config = getDefaultConfig({
+  appName: 'FishMiner',
+  projectId: 'c9bfdfeba6902d82c74c3c748bcd073e',
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http(),
+  },
+})
 
 root.render(
   <React.StrictMode>
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </RainbowKitProvider>
-    </WagmiConfig>
+    <BrowserRouter>
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <RainbowKitProvider>
+            <App />
+          </RainbowKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
+    </BrowserRouter>
   </React.StrictMode>
 )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()

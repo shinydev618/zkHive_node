@@ -2,17 +2,25 @@ import { Link, useLocation } from 'react-router-dom'
 import { Header as HeaderComponent } from './style'
 import { HEADER_LINKS } from '../../../constants'
 import { useEffect, useState } from 'react'
+import { useAccount } from 'wagmi'
+import { useConnectModal } from '@rainbow-me/rainbowkit'
 
 export const Header = () => {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-
+  const { isConnected, address } = useAccount()
+  const { openConnectModal } = useConnectModal()
   useEffect(() => {
     if (open) {
       setOpen(false)
     }
   }, [pathname])
 
+  const connectWallet = () => {
+    if (openConnectModal) {
+      openConnectModal()
+    }
+  }
   return (
     <HeaderComponent className='container'>
       <nav>
@@ -26,8 +34,15 @@ export const Header = () => {
             </li>
           ))}
           <li>
-            <button className='btn1'>
-              <span>0dxkjhd....JeB73m</span>
+            <button className='btn1' onClick={connectWallet}>
+              <span>
+                {' '}
+                {isConnected
+                  ? `${address?.slice(0, 6)}...${address?.slice(
+                      address.length - 4
+                    )}`
+                  : 'Connect wallet'}
+              </span>
               <img src={'/assets/images/price-plan-button-fill.png'} alt='' />
             </button>
           </li>

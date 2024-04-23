@@ -26,6 +26,10 @@ export const Wrapper = styled('section')`
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 233px;
+    img {
+      height: 233px;
+    }
   }
 
   .see_more {

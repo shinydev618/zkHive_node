@@ -13,7 +13,7 @@ export const Header = styled('header')`
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  z-index: 999;
+  z-index: 9;
   nav {
     width: 100%;
     height: 100%;
