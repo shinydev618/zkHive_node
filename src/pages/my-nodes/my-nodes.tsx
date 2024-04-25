@@ -1,17 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { PlusIcon } from "../../icons";
 import { NodeCard } from "./components";
-import { NODES } from "./constants";
 import { NodeGrid, Wrapper } from "./style";
 import { useAccount } from "wagmi";
 import { useNavigate } from "react-router-dom";
 import { RefContext } from "../../libs/RefContext";
 
 export const MyNodes = () => {
-  const { isConnected, address } = useAccount();
+  const { isConnected } = useAccount();
   const { dataMyNode }: any = useContext(RefContext);
-
   const navigate = useNavigate();
+
+  const [lengthMyNode, setLengthMyNode] = useState(dataMyNode.length);
+  const handleSeeMore = () => {};
 
   return (
     <Wrapper>
@@ -37,10 +38,18 @@ export const MyNodes = () => {
             </button>
           </NodeGrid>
           )
-          <button data-aos="fade-up" className="see_more">
-            <p> Click here to see more Nodes...</p>
-            <img src="/assets/images/see-more-button.png" alt="" />
-          </button>
+          {lengthMyNode > 5 ? (
+            <button
+              data-aos="fade-up"
+              className="see_more"
+              onClick={() => handleSeeMore()}
+            >
+              <p> Click here to see more Nodes...</p>
+              <img src="/assets/images/see-more-button.png" alt="" />
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       ) : (
         <h1 className="connectwallet">Please connect wallet</h1>

@@ -50,6 +50,11 @@ export const Wrapper = styled("section")`
     @media (max-width: 768px) {
       height: 150px;
     }
+
+    transition: all 0.3s !important;
+    &:hover {
+      filter: drop-shadow(0 0 15px #fbda00);
+    }
   }
 
   .see_more {
@@ -75,6 +80,11 @@ export const Wrapper = styled("section")`
     }
     img {
       width: 100%;
+    }
+
+    transition: all 0.3s !important;
+    &:hover {
+        filter: drop-shadow(0 0 10px #fbda00);
     }
   }
 

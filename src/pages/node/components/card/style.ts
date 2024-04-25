@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Card = styled('div')`
+export const Card = styled("div")`
   height: 100%;
   width: 100%;
   border-radius: 24px;
@@ -10,6 +10,12 @@ export const Card = styled('div')`
   align-items: center;
   padding: 29px 0;
   position: relative;
+  cursor: pointer;
+  transition: all 0.3s !important;
+  &:hover {
+    filter: drop-shadow(0 0 10px #fbda00);
+  }
+
   h1 {
     font-family: Inter;
     font-size: 30px;
@@ -89,4 +95,4 @@ export const Card = styled('div')`
       }
     }
   }
-`
+`;
