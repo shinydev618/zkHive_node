@@ -16,6 +16,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import RefContextProvider from "./libs/RefContext";
 AOS.init({ duration: 1000, once: true });
 
 const root = ReactDOM.createRoot(
@@ -34,15 +35,17 @@ const config = getDefaultConfig({
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider>
-            <App />
-          </RainbowKitProvider>
-        </QueryClientProvider>
-      </WagmiProvider>
-    </BrowserRouter>
+    <RefContextProvider>
+      <BrowserRouter>
+        <WagmiProvider config={config}>
+          <QueryClientProvider client={queryClient}>
+            <RainbowKitProvider>
+              <App />
+            </RainbowKitProvider>
+          </QueryClientProvider>
+        </WagmiProvider>
+      </BrowserRouter>
+    </RefContextProvider>
   </React.StrictMode>
 );
 

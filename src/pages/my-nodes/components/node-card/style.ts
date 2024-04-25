@@ -8,7 +8,7 @@ export const Card = styled("div")`
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: all 0.3s linear !important;
+  transition: all 0.3s !important;
   height: 233px;
   p {
     font-family: Inter;
@@ -25,7 +25,7 @@ export const Card = styled("div")`
   }
 
   &:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
   }
 
   @media (max-width: 1023px) {

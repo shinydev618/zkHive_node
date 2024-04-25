@@ -1,11 +1,24 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled("section")`
+  display: flex;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
+  /* min-height: 100vh; */
   background-color: black;
   padding-top: 150px;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+
+  .connectwallet {
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px !important;
+    font-weight: 700;
+    line-height: 80px;
+    color: #fbda00;
+  }
   .content {
     width: 100%;
     h1 {

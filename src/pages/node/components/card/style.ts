@@ -7,11 +7,12 @@ export const Card = styled('div')`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   padding: 29px 0;
   position: relative;
   h1 {
     font-family: Inter;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 800;
     line-height: 50px;
     text-align: center;
