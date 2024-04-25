@@ -55,16 +55,12 @@ export const PricePlans = ({ setStep, step }: Props) => {
   };
 
   return (
-    <PricePlansComponent>
+    <PricePlansComponent data-aos="fade-up">
       <div className="price_title_wrapper">
         <h1>Choose zkHive Node plan below</h1>
       </div>
       <div className={`price_grid_buttons`}>
-        <button
-          id="item-0"
-          data-aos="zoom-in"
-          onClick={() => changeSelected("basic")}
-        >
+        <button id="item-0" onClick={() => changeSelected("basic")}>
           <span style={{ color: selectPrice === "basic" ? "black" : "" }}>
             {selectPrice === "basic" && <CheckIcon />} Basic
           </span>
@@ -77,11 +73,7 @@ export const PricePlans = ({ setStep, step }: Props) => {
             alt=""
           />
         </button>
-        <button
-          id="item-1"
-          data-aos="zoom-in"
-          onClick={() => changeSelected("advanced")}
-        >
+        <button id="item-1" onClick={() => changeSelected("advanced")}>
           <span style={{ color: selectPrice === "advanced" ? "black" : "" }}>
             {selectPrice === "advanced" && <CheckIcon />} Advanced
           </span>
@@ -94,11 +86,7 @@ export const PricePlans = ({ setStep, step }: Props) => {
             alt=""
           />
         </button>
-        <button
-          id="item-2"
-          data-aos="zoom-in"
-          onClick={() => changeSelected("full")}
-        >
+        <button id="item-2" onClick={() => changeSelected("full")}>
           <span style={{ color: selectPrice === "full" ? "black" : "" }}>
             {selectPrice === "full" && <CheckIcon />} Full
           </span>

@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const BuyNodes = styled('section')`
+export const BuyNodes = styled("section")`
   width: 100%;
   min-height: 100vh;
   background-color: black;
-  padding-top: 195px;
+  padding-top: 150px;
   .content {
     h1 {
       font-family: Inter;
@@ -13,7 +13,7 @@ export const BuyNodes = styled('section')`
       line-height: 80px;
       text-align: center;
       color: #fbda00;
-      margin-bottom: 71px;
+      margin-bottom: 50px;
     }
   }
 
@@ -45,4 +45,4 @@ export const BuyNodes = styled('section')`
       padding-bottom: 12rem;
     }
   }
-`
+`;

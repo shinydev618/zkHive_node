@@ -18,12 +18,7 @@ export const TimeLine = ({ steps, active, children, setStep }: Props) => {
             }`}
             key={index}
           >
-            <p
-              data-aos="zoom-in"
-              className={index > active ? "step_label" : ""}
-            >
-              {item.label}
-            </p>
+            <p className={index > active ? "step_label" : ""}>{item.label}</p>
             <div
               className="count"
               onClick={active > index ? () => setStep(index) : undefined}

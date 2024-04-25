@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const PricePlans = styled('div')`
+export const PricePlans = styled("div")`
   width: 100%;
   .price_title_wrapper h1 {
     font-family: Inter;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 40px;
     text-align: left;
@@ -153,4 +153,4 @@ export const PricePlans = styled('div')`
       text-align: center;
     }
   }
-`
+`;

@@ -1,10 +1,11 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
-export const Wrapper = styled('section')`
+export const Wrapper = styled("section")`
   width: 100%;
   min-height: 100vh;
   background-color: black;
-  padding-top: 195px;
+  padding-top: 150px;
+  box-sizing: border-box;
   .content {
     width: 100%;
     h1 {
@@ -28,12 +29,18 @@ export const Wrapper = styled('section')`
     align-items: center;
     height: 233px;
     img {
-      height: 233px;
+      height: 100%;
+    }
+    @media (max-width: 1023px) {
+      height: 200px;
+    }
+    @media (max-width: 768px) {
+      height: 150px;
     }
   }
 
   .see_more {
-    margin-top: 60px;
+    margin-top: 50px;
     border: none;
     padding: 0 20px;
     outline: none;
@@ -75,6 +82,7 @@ export const Wrapper = styled('section')`
   }
 
   @media (max-width: 750px) {
+    padding: 6rem 1rem;
     .see_more {
       padding: 0 1rem;
     }
@@ -83,14 +91,14 @@ export const Wrapper = styled('section')`
       margin-bottom: 40px;
     }
   }
-`
+`;
 
-export const NodeGrid = styled('div')`
+export const NodeGrid = styled("div")`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   height: 100%;
-  margin-top: 60px;
+  margin-top: 50px;
   padding: 0 20px;
   img {
     width: 100%;
@@ -134,4 +142,4 @@ export const NodeGrid = styled('div')`
       padding: 0 1rem;
     }
   }
-`
+`;

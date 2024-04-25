@@ -1,8 +1,8 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
-export const PurchaseUI = styled('div')`
+export const PurchaseUI = styled("div")`
   width: 100%;
-  margin-top: 9rem;
+  margin-top: 14rem;
   .purchase_title_wrapper h1 {
     font-family: Inter;
     font-size: 30px;
@@ -82,6 +82,7 @@ export const PurchaseUI = styled('div')`
   }
 
   @media (max-width: 750px) {
+    margin-top: 0rem;
     padding: 0 1rem;
   }
-`
+`;

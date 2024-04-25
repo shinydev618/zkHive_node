@@ -85,7 +85,7 @@ export const SupplyUI = styled('div')`
       padding: 0 1rem;
     }
     .supply_grid_buttons {
-      margin-top: 3rem;
+      margin-top: 0rem;
       grid-row-gap: 4rem;
     }
     .supply_title_wrapper h1 {

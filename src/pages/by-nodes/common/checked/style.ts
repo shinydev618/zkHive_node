@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Checked = styled('div')`
+export const Checked = styled("div")`
   width: 100%;
   .checked_title_wrapper h1 {
     font-family: Inter;
@@ -76,4 +76,10 @@ export const Checked = styled('div')`
       margin-top: 20px;
     }
   }
-`
+
+  .checked_grid_buttons {
+    @media (max-width: 790px) {
+      margin-top: 0px;
+    }
+  }
+`;

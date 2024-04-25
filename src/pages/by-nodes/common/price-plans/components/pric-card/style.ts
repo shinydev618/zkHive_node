@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const PriceCard = styled('div')`
+export const PriceCard = styled("div")`
   border: 3px #363607 solid;
   padding: 24px;
   border-radius: 20px;
@@ -8,7 +8,7 @@ export const PriceCard = styled('div')`
   flex-direction: column;
   align-items: center;
   min-height: min-content;
-  transition: all 0.3s linear !important;
+  transition: all 0.5s linear !important;
   &:hover {
     border-color: #fbda00;
     background-color: #1d1d03;
@@ -89,4 +89,4 @@ export const PriceCard = styled('div')`
       display: block !important;
     }
   }
-`
+`;

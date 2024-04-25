@@ -4,7 +4,7 @@ export const Home = styled('section')`
   width: 100%;
   min-height: 100vh;
   background-color: #000000;
-  padding-top: 186px;
+  padding-top: 150px;
   h2 {
     font-family: Inter;
     font-size: 50px;

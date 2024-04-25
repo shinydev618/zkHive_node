@@ -1,11 +1,10 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Card = styled('div')`
+export const Card = styled("div")`
   cursor: pointer;
   position: relative;
   display: flex;
   width: 100%;
-  height: 100%;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -29,9 +28,14 @@ export const Card = styled('div')`
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1023px) {
     p {
       font-size: 20px;
     }
+    height: 200px;
   }
-`
+
+  @media (max-width: 768px) {
+    height: 150px;
+  }
+`;
