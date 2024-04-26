@@ -14,20 +14,20 @@ export const Supply = ({ setStep }: Props) => {
         5000
       );
     }
+
     try {
       const { myBalanceZKHive, totalSupply }: any = await getBalance(address);
 
-      if (myBalanceZKHive / totalSupply < 0.25) {
-        NotificationManager.warning(
-          `You hold ${
-            myBalanceZKHive / totalSupply
-          }% total supply now. It should be greater than 0.25%.`,
-          "",
-          5000
-        );
-        // return setStep(1);
-      }
-
+      // if (myBalanceZKHive / totalSupply < 0.25) {
+      //   NotificationManager.warning(
+      //     `You hold ${
+      //       myBalanceZKHive / totalSupply
+      //     }% total supply now. It should be greater than 0.25%.`,
+      //     "",
+      //     5000
+      //   );
+      //   return setStep(1);
+      // }
       setStep(3);
     } catch (error) {
       console.log("error of next step:", error);

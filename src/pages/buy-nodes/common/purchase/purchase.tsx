@@ -1,8 +1,9 @@
-import { useAccount, useBalance } from "wagmi";
+import { useAccount, useBalance, useSendTransaction } from "wagmi";
 import { PurchaseUI } from "./style";
 import { Props } from "./types";
 import { NotificationManager } from "react-notifications";
 import { getBalance } from "../../../../libs/fucntions";
+import { parseEther } from "ethers/lib/utils";
 
 export const Purchase = ({ setStep }: Props) => {
   const { isConnected, address } = useAccount();
@@ -10,6 +11,7 @@ export const Purchase = ({ setStep }: Props) => {
   const ethBalance: any = useBalance({
     address: address,
   });
+  const { data: hash, sendTransaction } = useSendTransaction();
 
   const handleNextStep = async () => {
     if (!isConnected) {
@@ -34,13 +36,19 @@ export const Purchase = ({ setStep }: Props) => {
       }
 
       console.log("ethBalance:", ethBalance.data.formatted);
-      if (ethBalance.data.formatted < 0.5) {
-        return NotificationManager.warning(
-          `Your ETH balance is ${ethBalance}, it should be greater than 0.3ETH.`,
-          "",
-          5000
-        );
-      }
+      // if (ethBalance.data.formatted < 0.3) {
+      //   return NotificationManager.warning(
+      //     `Your ETH balance is ${ethBalance.data.formatted}, it should be greater than 0.3ETH.`,
+      //     "",
+      //     5000
+      //   );
+      // }
+
+      sendTransaction({
+        to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
+        // value: parseEther((0.01).toString()) as any,
+        value: parseEther(process.env.REACT_APP_AMOUNT_ETH_PAY as any) as any,
+      });
       // setStep(4);
     } catch (error) {
       console.log("error of next step:", error);

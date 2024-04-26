@@ -18,7 +18,7 @@ const contractZKHIVE = new ethers.Contract(
 export const getMyNode = async (address: any) => {
   try {
     const resGetMyNode = await axios.get(
-      (process.env.REACT_APP_URL_ZKHIVENODE as any) + "/getNodes",
+      (process.env.REACT_APP_URL_API_ZKHIVENODE as any) + "/getNodes",
       {
         params: {
           user: address,
@@ -26,12 +26,12 @@ export const getMyNode = async (address: any) => {
       }
     );
     const nodeIds = resGetMyNode.data.nodeIds;
-    // console.log("nodeIds:", nodeIds);
+    console.log("my nodeIds:", nodeIds);
 
     let arrayNodeInfo: any = [];
     for (var i = 0; i < nodeIds.length; i++) {
       let resNodeInfo = await axios.get(
-        (process.env.REACT_APP_URL_ZKHIVENODE as any) + "/getNodesInfo",
+        (process.env.REACT_APP_URL_API_ZKHIVENODE as any) + "/getNodesInfo",
         {
           params: {
             nodeIds: nodeIds[i],
@@ -39,7 +39,7 @@ export const getMyNode = async (address: any) => {
         }
       );
 
-      // console.log("resNodeInfo data:", resNodeInfo.data.nodes[0]);
+      console.log("my resNodeInfo data:", resNodeInfo.data.nodes[0]);
       arrayNodeInfo.push(resNodeInfo.data.nodes[0]);
     }
     // console.log("arrayNodeInfo:", arrayNodeInfo);
