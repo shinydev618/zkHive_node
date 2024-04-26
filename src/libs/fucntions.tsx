@@ -6,11 +6,13 @@ import { formatUnits } from "ethers/lib/utils";
 const contractABI = abiZKHIVE;
 
 const provider = new ethers.providers.InfuraProvider(
-  "mainnet",
+  process.env.REACT_APP_IS_TESTNET ? "sepolia" : "mainnet",
   process.env.REACT_APP_KEY_INFRA
 );
 const contractZKHIVE = new ethers.Contract(
-  process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_MAIN as any,
+  process.env.REACT_APP_IS_TESTNET
+    ? (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TEST as any)
+    : (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_MAIN as any),
   contractABI,
   provider
 );
@@ -26,7 +28,7 @@ export const getMyNode = async (address: any) => {
       }
     );
     const nodeIds = resGetMyNode.data.nodeIds;
-    console.log("my nodeIds:", nodeIds);
+    // console.log("my nodeIds:", nodeIds);
 
     let arrayNodeInfo: any = [];
     for (var i = 0; i < nodeIds.length; i++) {
@@ -39,7 +41,7 @@ export const getMyNode = async (address: any) => {
         }
       );
 
-      console.log("my resNodeInfo data:", resNodeInfo.data.nodes[0]);
+      // console.log("my resNodeInfo data:", resNodeInfo.data.nodes[0]);
       arrayNodeInfo.push(resNodeInfo.data.nodes[0]);
     }
     // console.log("arrayNodeInfo:", arrayNodeInfo);
@@ -65,5 +67,13 @@ export const getBalance = async (address: any) => {
     return { myBalanceZKHive: myBalanceZKHive, totalSupply: totalSupply };
   } catch (error) {
     console.log("error of handleCheck", error);
+  }
+};
+
+export const shortFloat = (number: any, pointNum: any) => {
+  if (!Number.isNaN(number) && Number.isInteger(number)) {
+    return number;
+  } else {
+    return number.toFixed(pointNum); //number.toFixed(pointNum);
   }
 };

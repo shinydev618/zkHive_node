@@ -27,6 +27,7 @@ const steps = [
 export const BuyNodes = () => {
   const [step, setStep] = useState(0);
   const [plan, setPlan] = useState<"basic" | "advanced" | "full" | undefined>();
+  const [ethPay, setETHPay] = useState(0);
 
   return (
     <BuyNodesComponent>
@@ -43,6 +44,7 @@ export const BuyNodes = () => {
                 setStep={setStep}
                 plan={plan}
                 setPlan={setPlan}
+                setETHPay={setETHPay}
               />
               {step === 1 || step > 1 ? (
                 <Checked step={step} setStep={setStep} />
@@ -50,7 +52,11 @@ export const BuyNodes = () => {
                 ""
               )}
               {step === 2 || step > 2 ? <Supply setStep={setStep} /> : ""}
-              {step === 3 || step > 3 ? <Purchase setStep={setStep} /> : ""}
+              {step === 3 || step > 3 ? (
+                <Purchase setStep={setStep} ethPay={ethPay} />
+              ) : (
+                ""
+              )}
             </div>
           </TimeLine>
         )}

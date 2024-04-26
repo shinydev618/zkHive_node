@@ -19,19 +19,19 @@ export const Checked = ({ setStep, step }: Props) => {
     }
     try {
       const { myBalanceZKHive, totalSupply }: any = await getBalance(address);
-      console.log("myBalanceZKHive:", myBalanceZKHive);
-      console.log("totalSupply:", totalSupply);
+      // console.log("myBalanceZKHive:", myBalanceZKHive);
+      // console.log("totalSupply:", totalSupply);
 
       console.log("hold %:", myBalanceZKHive / totalSupply);
-      // if (myBalanceZKHive / totalSupply < 0.25) {
-      //   return NotificationManager.warning(
-      //     `You hold ${
-      //       myBalanceZKHive / totalSupply
-      //     }% total supply now. ( Your balance: ${myBalanceZKHive} ZKHIVE ).`,
-      //     "",
-      //     5000
-      //   );
-      // }
+      if ((myBalanceZKHive / totalSupply) * 100 < 0.25) {
+        return NotificationManager.warning(
+          `You hold ${
+            myBalanceZKHive / totalSupply
+          }% total supply now. ( Your balance: ${myBalanceZKHive} ZKHIVE ).`,
+          "",
+          5000
+        );
+      }
 
       setIsChek(true);
     } catch (error) {

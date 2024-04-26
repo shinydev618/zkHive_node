@@ -1,8 +1,29 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const CongratulationsUI = styled('div')`
+export const CongratulationsUI = styled("div")`
   max-width: 835px;
   margin: auto;
+
+  .text_ani {
+    animation: animateText 500ms linear;
+    @keyframes animateText {
+      0% {
+        transform: scale(0.1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+
+      75% {
+        transform: scale(0.9);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
   h1 {
     font-family: Inter;
     font-size: 50px !important;
@@ -76,4 +97,4 @@ export const CongratulationsUI = styled('div')`
       font-size: 20px;
     }
   }
-`
+`;

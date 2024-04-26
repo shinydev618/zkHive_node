@@ -31,7 +31,8 @@ const config = getDefaultConfig({
   projectId: "c9bfdfeba6902d82c74c3c748bcd073e",
   chains: [network],
   transports: {
-    [network.id]: http(),
+    [mainnet.id]: http("https://ethereum-rpc.publicnode.com"),
+    [sepolia.id]: http("https://ethereum-sepolia-rpc.publicnode.com"),
   },
 });
 

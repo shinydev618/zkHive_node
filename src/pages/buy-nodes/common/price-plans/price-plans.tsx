@@ -31,7 +31,13 @@ const PriceList3 = [
   "$zkHive Rewards",
 ];
 
-export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
+export const PricePlans = ({
+  setStep,
+  step,
+  plan,
+  setPlan,
+  setETHPay,
+}: any) => {
   const [selected, setSelected] = useState("full");
   useEffect(() => {
     if (plan) {
@@ -42,6 +48,7 @@ export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
   useEffect(() => {
     if (step === 0) {
       setPlan(undefined);
+      setETHPay(0);
     }
   }, [step]);
 
@@ -104,7 +111,10 @@ export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
             title="Basic zkNode"
             buttonTitle="0.2 ETH"
             items={PriceList1}
-            onClick={() => setPlan("basic")}
+            onClick={() => {
+              setETHPay(0.2);
+              setPlan("basic");
+            }}
             priceType="basic"
           />
           <PriceCard
@@ -113,7 +123,10 @@ export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
             title="Advanced zkNode"
             buttonTitle="0.5 ETH"
             items={PriceList2}
-            onClick={() => setPlan("advanced")}
+            onClick={() => {
+              setETHPay(0.5);
+              setPlan("advanced");
+            }}
             priceType="advanced"
           />
           <PriceCard
@@ -122,7 +135,10 @@ export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
             title="Full zkNode"
             buttonTitle="1 ETH"
             items={PriceList3}
-            onClick={() => setPlan("full")}
+            onClick={() => {
+              setETHPay(1);
+              setPlan("full");
+            }}
             priceType="full"
           />
         </div>
