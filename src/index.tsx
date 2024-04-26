@@ -4,7 +4,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { WagmiProvider, http } from "wagmi";
-import { mainnet } from "wagmi/chains";
+import { mainnet, sepolia } from "wagmi/chains";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 
@@ -17,19 +17,21 @@ import { BrowserRouter } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RefContextProvider from "./libs/RefContext";
+import { NotificationContainer } from "react-notifications";
 AOS.init({ duration: 1000, once: true });
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 const queryClient = new QueryClient();
+const network = process.env.REACT_APP_IS_TESTNET ? sepolia : mainnet;
 
 const config = getDefaultConfig({
-  appName: "FishMiner",
+  appName: "zkHive Node",
   projectId: "c9bfdfeba6902d82c74c3c748bcd073e",
-  chains: [mainnet],
+  chains: [network],
   transports: {
-    [mainnet.id]: http(),
+    [network.id]: http(),
   },
 });
 
@@ -41,6 +43,7 @@ root.render(
           <QueryClientProvider client={queryClient}>
             <RainbowKitProvider>
               <App />
+              <NotificationContainer />
             </RainbowKitProvider>
           </QueryClientProvider>
         </WagmiProvider>

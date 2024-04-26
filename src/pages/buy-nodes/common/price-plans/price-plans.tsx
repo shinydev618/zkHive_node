@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { PricePlans as PricePlansComponent } from "./style";
 import { CheckIcon } from "../../../../icons";
 import { PriceCard } from "./components";
-import { Props } from "./types";
+// import { Props } from "./types";
 
 const PriceList1 = [
   "Anti Virus Support",
@@ -31,20 +31,17 @@ const PriceList3 = [
   "$zkHive Rewards",
 ];
 
-export const PricePlans = ({ setStep, step }: Props) => {
-  const [selectPrice, setSelectPrice] = useState<
-    "basic" | "advanced" | "full" | undefined
-  >();
+export const PricePlans = ({ setStep, step, plan, setPlan }: any) => {
   const [selected, setSelected] = useState("full");
   useEffect(() => {
-    if (selectPrice) {
+    if (plan) {
       setStep(1);
     }
-  }, [selectPrice]);
+  }, [plan]);
 
   useEffect(() => {
     if (step === 0) {
-      setSelectPrice(undefined);
+      setPlan(undefined);
     }
   }, [step]);
 
@@ -61,12 +58,12 @@ export const PricePlans = ({ setStep, step }: Props) => {
       </div>
       <div className={`price_grid_buttons`}>
         <button id="item-0" onClick={() => changeSelected("basic")}>
-          <span style={{ color: selectPrice === "basic" ? "black" : "" }}>
-            {selectPrice === "basic" && <CheckIcon />} Basic
+          <span style={{ color: plan === "basic" ? "black" : "" }}>
+            {plan === "basic" && <CheckIcon />} Basic
           </span>
           <img
             src={
-              selectPrice === "basic"
+              plan === "basic"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -74,12 +71,12 @@ export const PricePlans = ({ setStep, step }: Props) => {
           />
         </button>
         <button id="item-1" onClick={() => changeSelected("advanced")}>
-          <span style={{ color: selectPrice === "advanced" ? "black" : "" }}>
-            {selectPrice === "advanced" && <CheckIcon />} Advanced
+          <span style={{ color: plan === "advanced" ? "black" : "" }}>
+            {plan === "advanced" && <CheckIcon />} Advanced
           </span>
           <img
             src={
-              selectPrice === "advanced"
+              plan === "advanced"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -87,12 +84,12 @@ export const PricePlans = ({ setStep, step }: Props) => {
           />
         </button>
         <button id="item-2" onClick={() => changeSelected("full")}>
-          <span style={{ color: selectPrice === "full" ? "black" : "" }}>
-            {selectPrice === "full" && <CheckIcon />} Full
+          <span style={{ color: plan === "full" ? "black" : "" }}>
+            {plan === "full" && <CheckIcon />} Full
           </span>
           <img
             src={
-              selectPrice === "full"
+              plan === "full"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -100,32 +97,32 @@ export const PricePlans = ({ setStep, step }: Props) => {
           />
         </button>
       </div>
-      {!selectPrice ? (
+      {!plan ? (
         <div className="price_grid_cards">
           <PriceCard
             selected={selected}
             title="Basic zkNode"
             buttonTitle="0.2 ETH"
             items={PriceList1}
-            onClick={() => setSelectPrice("basic")}
+            onClick={() => setPlan("basic")}
             priceType="basic"
           />
           <PriceCard
             selected={selected}
-            selectPrice={selectPrice}
+            selectPrice={plan}
             title="Advanced zkNode"
             buttonTitle="0.5 ETH"
             items={PriceList2}
-            onClick={() => setSelectPrice("advanced")}
+            onClick={() => setPlan("advanced")}
             priceType="advanced"
           />
           <PriceCard
             selected={selected}
-            selectPrice={selectPrice}
+            selectPrice={plan}
             title="Full zkNode"
             buttonTitle="1 ETH"
             items={PriceList3}
-            onClick={() => setSelectPrice("full")}
+            onClick={() => setPlan("full")}
             priceType="full"
           />
         </div>

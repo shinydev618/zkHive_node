@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('../public/assets/fonts/Inter-Regular.ttf');
+  font-family: "Inter";
+  src: url("../public/assets/fonts/Inter-Regular.ttf");
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,27 +25,34 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #5d5d5d;
+  background-color: #363607;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #fbda00;
   cursor: pointer !important;
   border-radius: 2px;
 }
-
 .notification-container {
-  color: white;
-  font-family: Khand;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%; /* 33px */
-
+  width: fit-content !important;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
   @media (max-width: 430px) {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 400;
   }
+}
+
+.notification {
+  padding: 15px 30px 15px 58px !important;
+  color: black !important;
+  border-radius: 6px !important;
+  opacity: 1 !important;
+}
+.notification-warning {
+  background-color: #fbda00 !important;
 }
 
 body {

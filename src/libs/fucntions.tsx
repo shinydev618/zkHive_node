@@ -1,4 +1,19 @@
 import axios from "axios";
+import { abiZKHIVE } from "./abi";
+import { ethers } from "ethers";
+import { formatUnits } from "ethers/lib/utils";
+
+const contractABI = abiZKHIVE;
+
+const provider = new ethers.providers.InfuraProvider(
+  "mainnet",
+  process.env.REACT_APP_KEY_INFRA
+);
+const contractZKHIVE = new ethers.Contract(
+  process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_MAIN as any,
+  contractABI,
+  provider
+);
 
 export const getMyNode = async (address: any) => {
   try {
@@ -11,7 +26,7 @@ export const getMyNode = async (address: any) => {
       }
     );
     const nodeIds = resGetMyNode.data.nodeIds;
-    console.log("nodeIds:", nodeIds);
+    // console.log("nodeIds:", nodeIds);
 
     let arrayNodeInfo: any = [];
     for (var i = 0; i < nodeIds.length; i++) {
@@ -27,9 +42,28 @@ export const getMyNode = async (address: any) => {
       // console.log("resNodeInfo data:", resNodeInfo.data.nodes[0]);
       arrayNodeInfo.push(resNodeInfo.data.nodes[0]);
     }
-    console.log("arrayNodeInfo:", arrayNodeInfo);
+    // console.log("arrayNodeInfo:", arrayNodeInfo);
     return arrayNodeInfo;
   } catch (error) {
     console.log("error of handleGetMyNode:", error);
+  }
+};
+
+export const getBalance = async (address: any) => {
+  try {
+    const resTotalSupply = await contractZKHIVE.totalSupply();
+    const totalSupply: any = parseFloat(formatUnits(resTotalSupply._hex, 18));
+    // console.log("totalSupply:", totalSupply);
+
+    const resMyBalanceZKHive = await contractZKHIVE.balanceOf(address);
+
+    const myBalanceZKHive: any = parseFloat(
+      formatUnits(resMyBalanceZKHive._hex, 18)
+    );
+    // console.log("myBalanceZKHive:", myBalanceZKHive);
+
+    return { myBalanceZKHive: myBalanceZKHive, totalSupply: totalSupply };
+  } catch (error) {
+    console.log("error of handleCheck", error);
   }
 };

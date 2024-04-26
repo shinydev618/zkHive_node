@@ -5,7 +5,7 @@ import { Card } from "./components";
 import { Grid, Home as HomeComponent } from "./style";
 export const Node = () => {
   const { state } = useLocation();
-  console.log("state:", state);
+  // console.log("state:", state);
 
   return (
     <HomeComponent>
