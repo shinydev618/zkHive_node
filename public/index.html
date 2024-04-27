@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="zkHive Node" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="icon" href="./assets/images/logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -23,6 +23,146 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>zkHive Node</title>
+    <style>
+      html {
+        margin: 0;
+      }
+      body {
+        margin: 0;
+      }
+      .content_ring {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: #202020;
+        z-index: 9999;
+        justify-content: center;
+        font-family: Inter;
+        align-items: center;
+      }
+      .dflex {
+        display: flex;
+        align-items: center;
+      }
+      .dflexi {
+        display: flex;
+        width: 60px;
+        align-items: center;
+      }
+
+      .ring {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: transparent;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        text-align: center;
+        font-family: Inter;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        /* font-weight: 600; */
+        color: white;
+        letter-spacing: 4px;
+        /* text-transform: uppercase; */
+        text-shadow: 0 0 10px #fbda00;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        animation: animateText 1s linear infinite;
+      }
+
+      .ring:before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        border-top: 4px solid #fbda00;
+        border-right: 4px solid #fbda00;
+
+        border-radius: 50%;
+        animation: animateC 1s linear infinite;
+      }
+
+      .page_load_spin {
+        display: block;
+        position: absolute;
+        top: calc(50% - 2px);
+        left: 50%;
+        width: 50%;
+        height: 4px;
+        background: transparent;
+        /* box-shadow: 0 0 20px #FDC400; */
+        transform-origin: left;
+        animation: animate 1s linear infinite;
+      }
+
+      .page_load_spin:before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fbda00;
+
+        top: -6px;
+        right: -8px;
+        box-shadow: 0 0 12px #fbda00;
+      }
+
+      @media (max-width: 768px) {
+        .dflexi {
+          width: 30px;
+        }
+        .ring {
+          width: 250px;
+          height: 250px;
+          font-size: 22px;
+        }
+      }
+      @keyframes animateC {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes animate {
+        0% {
+          transform: rotate(45deg);
+        }
+
+        100% {
+          transform: rotate(405deg);
+        }
+      }
+
+      @keyframes animateText {
+        0% {
+          text-shadow: 0 0 12px white;
+        }
+
+        50% {
+          text-shadow: unset;
+        }
+
+        100% {
+          text-shadow: 0 0 12px white;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -37,5 +177,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div class="content_ring">
+      <div class="ring">
+        <div class="dflexi">
+          <img src="./assets/images/logo.png" width="100%" alt="logo" />
+        </div>
+        <div class="dflex">zkHive Node</div>
+        <span class="page_load_spin"></span>
+      </div>
+    </div>
   </body>
 </html>

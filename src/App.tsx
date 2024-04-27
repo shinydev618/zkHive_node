@@ -4,8 +4,29 @@ import { Route, Routes } from "react-router-dom";
 import { BuyNodes, MyNodes, Node } from "./pages";
 import HomePage from "./pages/home/home";
 import { Subscription } from "./pages/subscription";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [isLoading, setLoading] = useState(true);
+  const someRequest = (): Promise<void> => {
+    return new Promise((resolve) => setTimeout(() => resolve(), 1500));
+  };
+
+  useEffect(() => {
+    someRequest().then(() => {
+      const loaderElement = document.querySelector(".content_ring");
+      if (loaderElement) {
+        loaderElement.remove();
+        setLoading(!isLoading);
+      }
+    });
+  });
+
+  if (isLoading) {
+    //
+    return null;
+  }
+
   return (
     <>
       <Layout>

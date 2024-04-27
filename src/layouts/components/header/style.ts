@@ -43,7 +43,6 @@ export const Header = styled('header')`
       font-family: Inter;
       font-size: 30px;
       font-weight: 500;
-      line-height: 40px;
       display: flex;
       align-items: center;
       color: white;

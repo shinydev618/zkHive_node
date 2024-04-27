@@ -43,7 +43,7 @@ export const Header = () => {
     <HeaderComponent className="container">
       <nav>
         <Link to="/">
-          <img src="/assets/images/logo.png" alt="" /> <span>zkHive</span>
+          <img src="/assets/images/logo.png" width={"60px"} alt="" /> <span>zkHive</span>
         </Link>
         <ul className={open ? "active" : ""}>
           {HEADER_LINKS.map((link, index) => (

@@ -23,7 +23,7 @@ export const Congratulations = () => {
         className="btn"
       >
         <span>Go to My Nodes</span>
-        <img src={"/assets/images/price-plan-button-fill.png"} />
+        <img src={"/assets/images/price-plan-button-fill.png"} alt="" />
       </button>
     </CongratulationsUI>
   );

@@ -82,10 +82,8 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
             (process.env.REACT_APP_URL_API_ZKHIVENODE as any) +
               "/submitPayment",
             {
-              params: {
-                user: address,
-                txId: hash,
-              },
+              user: address,
+              txId: hash,
             }
           )
           .then((res) => {
