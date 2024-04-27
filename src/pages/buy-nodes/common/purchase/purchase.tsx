@@ -68,8 +68,8 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
       setProcess(true);
       const hash = await sendTransactionAsync({
         to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
-        value: parseEther((0.01).toString() as any) as any,
-        // value: parseEther(ethPay.toString()) as any,
+        // value: parseEther((0.01).toString() as any) as any,
+        value: parseEther(ethPay.toString()) as any,
         // value: parseEther(process.env.REACT_APP_AMOUNT_ETH_PAY as any) as any,
       });
       console.log("hash:", hash);
