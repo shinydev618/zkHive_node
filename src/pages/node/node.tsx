@@ -14,14 +14,14 @@ export const Node = () => {
         <Grid>
           <div id="item-0" data-aos="zoom-in">
             <Card
-              title="Viruses detected"
+              title="Viruses Detected"
               value={state?.virusesDetected}
               src="/assets/images/node-01.png"
             />
           </div>
           <div id="item-1" data-aos="zoom-in">
             <Card
-              title="Number of scans"
+              title="Number of Scans"
               value={state?.scansCount}
               src="/assets/images/node-02.png"
             />
@@ -75,9 +75,10 @@ export const Node = () => {
           </div>
           <div id="item-7" data-aos="zoom-in">
             <Card
+              title={"Rewards"}
               value={state?.earnings + " " + state?.earningsType}
               isButton
-              buttonTitle="Claim now"
+              buttonTitle="Claim Now"
               // title="Node Uptime"
               src="/assets/images/node-08.png"
             />
