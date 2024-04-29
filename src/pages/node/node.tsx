@@ -36,7 +36,7 @@ export const Node = () => {
           <div id="item-3" data-aos="zoom-in" className="item-4">
             <Card
               title="Node ID"
-              value={<p>{state?.id}</p>}
+              value={state?.id}
               src="/assets/images/node-05.png"
             />
             <img src="/assets/images/image-01.png" className="img-1" />
@@ -44,13 +44,13 @@ export const Node = () => {
           </div>
           <div id="item-4" data-aos="zoom-in">
             <Card
-              title={
+              title={"Node Status"}
+              value={
                 <span className="active_status">
                   <RoundedIcon />
                   {state?.status}
                 </span>
               }
-              value={"Node Status"}
               src="/assets/images/node-01.png"
             />
           </div>

@@ -18,7 +18,7 @@ export const Card = styled("div")`
 
   h1 {
     font-family: Inter;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 800;
     line-height: 50px;
     text-align: center;
