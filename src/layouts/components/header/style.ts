@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Header = styled('header')`
+export const Header = styled("header")`
   min-height: 90px;
   width: 100%;
   background: #363607;
@@ -66,7 +66,7 @@ export const Header = styled('header')`
 
           position: relative;
           &::before {
-            content: '';
+            content: "";
             width: 0%;
             height: 1px;
             background: #fbda00;
@@ -99,7 +99,8 @@ export const Header = styled('header')`
     }
   }
 
-  .btn1 {
+  .btn1,
+  .btn2 {
     /* width: 100%; */
     width: 244px;
     position: relative;
@@ -125,6 +126,18 @@ export const Header = styled('header')`
       z-index: 100;
       color: black;
     }
+  }
+  .btn2 span {
+    color: #fbda00;
+  }
+  .btn2 {
+    position: absolute !important;
+    top: 100px !important;
+    z-index: 100;
+    display: none;
+  }
+  .disconnect_active {
+    display: flex;
   }
 
   @media (max-width: 1000px) {
@@ -161,9 +174,12 @@ export const Header = styled('header')`
     .btn1 {
       margin-top: 10px;
     }
+    .btn2 {
+      top: 470px !important;
+    }
   }
 
   @media (max-width: 750px) {
     padding: 10px 1rem;
   }
-`
+`;

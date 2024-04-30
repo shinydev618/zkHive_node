@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Header as HeaderComponent } from "./style";
 import { HEADER_LINKS } from "../../../constants";
 import { useContext, useEffect, useState } from "react";
-import { useAccount } from "wagmi";
+import { useAccount, useDisconnect } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { getMyNode } from "../../../libs/fucntions";
 import { RefContext } from "../../../libs/RefContext";
@@ -10,15 +10,21 @@ import { RefContext } from "../../../libs/RefContext";
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const { setDataMyNode }: any = useContext(RefContext);
-
+  const [disconnectOpen, setDisconnectOpen] = useState(false)
   const { pathname } = useLocation();
+  const { disconnect } = useDisconnect()
   const { isConnected, address } = useAccount();
   const { openConnectModal } = useConnectModal();
 
   const connectWallet = () => {
-    if (openConnectModal) {
-      openConnectModal();
+    if (isConnected) {
+      setDisconnectOpen(prev => !prev)
+    } else {
+      if (openConnectModal) {
+        openConnectModal();
+      }
     }
+
   };
 
   const handleGetMyNode = async (address: any) => {
@@ -39,6 +45,12 @@ export const Header = () => {
     }
   }, [isConnected, address]);
 
+
+  const handleDisconnect = () => {
+    setDisconnectOpen(false)
+    disconnect()
+    setOpen(false)
+  }
   return (
     <HeaderComponent className="container">
       <nav>
@@ -58,11 +70,17 @@ export const Header = () => {
                 {" "}
                 {isConnected
                   ? `${address?.slice(0, 6)}...${address?.slice(
-                      address.length - 4
-                    )}`
+                    address.length - 4
+                  )}`
                   : "Connect wallet"}
               </span>
               <img src={"/assets/images/price-plan-button-fill.png"} alt="" />
+            </button>
+            <button className={`btn2 ${disconnectOpen ? "disconnect_active" : ""}`} onClick={handleDisconnect} >
+              <span>
+                Disconnect
+              </span>
+              <img src={"/assets/images/price-plan-button.png"} alt="" />
             </button>
           </li>
         </ul>
