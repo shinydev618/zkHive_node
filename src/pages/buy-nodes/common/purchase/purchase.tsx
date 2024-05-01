@@ -53,7 +53,7 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
         );
       }
 
-      console.log("ethBalance:", ethBalance.data.formatted);
+      // console.log("ethBalance:", ethBalance.data.formatted);
       if (ethBalance.data.formatted < ethPay) {
         return NotificationManager.warning(
           `Your ETH balance is ${shortFloat(
@@ -68,13 +68,12 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
       setProcess(true);
       const hash = await sendTransactionAsync({
         to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
-        // value: parseEther((0.01).toString() as any) as any,
-        value: parseEther(ethPay.toString()) as any,
-        // value: parseEther(process.env.REACT_APP_AMOUNT_ETH_PAY as any) as any,
+        value: parseEther((0.01).toString() as any) as any,
+        // value: parseEther(ethPay.toString()) as any,
       });
-      console.log("hash:", hash);
+      // console.log("hash:", hash);
       const txReceipt = await publicClient?.waitForTransactionReceipt({ hash });
-      console.log("txReceipt?.status:", txReceipt?.status);
+      // console.log("txReceipt?.status:", txReceipt?.status);
 
       if (txReceipt?.status === "success") {
         await axios
@@ -87,11 +86,12 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
             }
           )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
+            if (res.data !== null || res.data !== undefined) {
+              setStep(4);
+            }
             setProcess(false);
           });
-
-        // setStep(4);
       } else {
         setProcess(false);
       }

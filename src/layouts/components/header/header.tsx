@@ -28,7 +28,7 @@ export const Header = () => {
   };
 
   const handleGetMyNode = async (address: any) => {
-    console.log("connected address:", address);
+    // console.log("connected address:", address);
     const resMyNode = await getMyNode(address);
     setDataMyNode(resMyNode);
   };
