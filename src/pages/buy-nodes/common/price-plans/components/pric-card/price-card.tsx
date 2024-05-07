@@ -11,7 +11,7 @@ export const PriceCard = ({
 }: Props) => {
   return (
     <PriceCardComponent className={selected === priceType ? "active" : ""}>
-      <img src="/assets/images/logo.png" width={"80px"}  alt="" />
+      <img src="/assets/images/logo.png" width={"80px"} alt="" />
       <h2>{title}</h2>
       <hr />
       <p>Services included</p>

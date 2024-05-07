@@ -11,8 +11,8 @@ const provider = new ethers.providers.InfuraProvider(
 );
 const contractZKHIVE = new ethers.Contract(
   process.env.REACT_APP_IS_TESTNET
-    ? (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TEST as any)
-    : (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_MAIN as any),
+    ? (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TOKEN_TEST as any)
+    : (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TOKEN_MAIN as any),
   contractABI,
   provider
 );
