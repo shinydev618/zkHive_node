@@ -1,10 +1,36 @@
 import { NotificationManager } from "react-notifications";
 import { Card as CardComponent } from "./style";
 import { Props } from "./types";
+import axios from "axios";
+import { useAccount } from "wagmi";
 
 export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
+  const { isConnected, address } = useAccount();
   const handleClaim = async () => {
-    return NotificationManager.warning("Coming soon.", "", 5000);
+    if (!isConnected) {
+      return NotificationManager.warning(
+        "Please connect wallet first.",
+        "",
+        5000
+      );
+    }
+
+    try {
+      await axios
+        .post(
+          (process.env.REACT_APP_URL_API_ZKHIVENODE as any) +
+            "/submitClaimRequest",
+          {
+            user: address,
+          }
+        )
+        .then((res) => {
+          console.log("resclaim:", res.data);
+        });
+    } catch (error) {
+      console.log("error of claim", error);
+    }
+    // return NotificationManager.warning("Coming soon.", "", 5000);
   };
 
   return (
