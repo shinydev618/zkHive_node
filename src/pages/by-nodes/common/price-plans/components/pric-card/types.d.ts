@@ -1,5 +1,5 @@
 export type Props = {
-  priceType: 'basic' | 'advanced' | 'full'
+  priceType: 'Basic' | 'Advanced' | 'Full'
   onClick: () => void
   items: string[]
   title: string

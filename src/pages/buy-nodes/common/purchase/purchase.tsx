@@ -12,7 +12,7 @@ import { parseEther } from "ethers/lib/utils";
 import { useState } from "react";
 import axios from "axios";
 
-export const Purchase = ({ setStep, ethPay }: Props) => {
+export const Purchase = ({ setStep, ethPay, plan }: Props) => {
   const { isConnected, address } = useAccount();
   const publicClient = usePublicClient();
 
@@ -66,10 +66,25 @@ export const Purchase = ({ setStep, ethPay }: Props) => {
       }
 
       setProcess(true);
+      const resPaymentAddress = await axios.get(
+        (process.env.REACT_APP_URL_API_ZKHIVENODE as any) + "/getPaymentLink",
+        {
+          params: {
+            user: address,
+            nodeType: plan,
+          },
+        }
+      );
+      console.log(
+        "resPaymentAddress.data.paymentAddress:",
+        resPaymentAddress.data.paymentAddress
+      );
+
       const hash = await sendTransactionAsync({
         to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
-        value: parseEther((0.01).toString() as any) as any,
-        // value: parseEther(ethPay.toString()) as any,
+        // to: resPaymentAddress.data.paymentAddress as any,
+        // value: parseEther((0.01).toString() as any) as any,
+        value: parseEther(ethPay.toString()) as any,
       });
       // console.log("hash:", hash);
       const txReceipt = await publicClient?.waitForTransactionReceipt({ hash });

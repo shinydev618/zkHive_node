@@ -33,9 +33,9 @@ const PriceList3 = [
 
 export const PricePlans = ({ setStep, step }: Props) => {
   const [selectPrice, setSelectPrice] = useState<
-    "basic" | "advanced" | "full" | undefined
+    "Basic" | "Advanced" | "Full" | undefined
   >();
-  const [selected, setSelected] = useState("full");
+  const [selected, setSelected] = useState("Full");
   useEffect(() => {
     if (selectPrice) {
       setStep(1);
@@ -63,14 +63,14 @@ export const PricePlans = ({ setStep, step }: Props) => {
         <button
           id="item-0"
           data-aos="zoom-in"
-          onClick={() => changeSelected("basic")}
+          onClick={() => changeSelected("Basic")}
         >
-          <span style={{ color: selectPrice === "basic" ? "black" : "" }}>
-            {selectPrice === "basic" && <CheckIcon />} Basic
+          <span style={{ color: selectPrice === "Basic" ? "black" : "" }}>
+            {selectPrice === "Basic" && <CheckIcon />} Basic
           </span>
           <img
             src={
-              selectPrice === "basic"
+              selectPrice === "Basic"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -80,14 +80,14 @@ export const PricePlans = ({ setStep, step }: Props) => {
         <button
           id="item-1"
           data-aos="zoom-in"
-          onClick={() => changeSelected("advanced")}
+          onClick={() => changeSelected("Advanced")}
         >
-          <span style={{ color: selectPrice === "advanced" ? "black" : "" }}>
-            {selectPrice === "advanced" && <CheckIcon />} Advanced
+          <span style={{ color: selectPrice === "Advanced" ? "black" : "" }}>
+            {selectPrice === "Advanced" && <CheckIcon />} Advanced
           </span>
           <img
             src={
-              selectPrice === "advanced"
+              selectPrice === "Advanced"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -97,14 +97,14 @@ export const PricePlans = ({ setStep, step }: Props) => {
         <button
           id="item-2"
           data-aos="zoom-in"
-          onClick={() => changeSelected("full")}
+          onClick={() => changeSelected("Full")}
         >
-          <span style={{ color: selectPrice === "full" ? "black" : "" }}>
-            {selectPrice === "full" && <CheckIcon />} Full
+          <span style={{ color: selectPrice === "Full" ? "black" : "" }}>
+            {selectPrice === "Full" && <CheckIcon />} Full
           </span>
           <img
             src={
-              selectPrice === "full"
+              selectPrice === "Full"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -119,8 +119,8 @@ export const PricePlans = ({ setStep, step }: Props) => {
             title="Basic zkNode"
             buttonTitle="0.2 ETH"
             items={PriceList1}
-            onClick={() => setSelectPrice("basic")}
-            priceType="basic"
+            onClick={() => setSelectPrice("Basic")}
+            priceType="Basic"
           />
           <PriceCard
             selected={selected}
@@ -128,8 +128,8 @@ export const PricePlans = ({ setStep, step }: Props) => {
             title="Advanced zkNode"
             buttonTitle="0.5 ETH"
             items={PriceList2}
-            onClick={() => setSelectPrice("advanced")}
-            priceType="advanced"
+            onClick={() => setSelectPrice("Advanced")}
+            priceType="Advanced"
           />
           <PriceCard
             selected={selected}
@@ -137,8 +137,8 @@ export const PricePlans = ({ setStep, step }: Props) => {
             title="Full zkNode"
             buttonTitle="1 ETH"
             items={PriceList3}
-            onClick={() => setSelectPrice("full")}
-            priceType="full"
+            onClick={() => setSelectPrice("Full")}
+            priceType="Full"
           />
         </div>
       ) : (

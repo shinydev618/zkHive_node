@@ -26,7 +26,7 @@ const steps = [
 
 export const BuyNodes = () => {
   const [step, setStep] = useState(0);
-  const [plan, setPlan] = useState<"basic" | "advanced" | "full" | undefined>();
+  const [plan, setPlan] = useState<"Basic" | "Advanced" | "Full" | undefined>();
   const [ethPay, setETHPay] = useState(0);
 
   return (
@@ -53,7 +53,7 @@ export const BuyNodes = () => {
               )}
               {step === 2 || step > 2 ? <Supply setStep={setStep} /> : ""}
               {step === 3 || step > 3 ? (
-                <Purchase setStep={setStep} ethPay={ethPay} />
+                <Purchase setStep={setStep} ethPay={ethPay} plan={plan} />
               ) : (
                 ""
               )}

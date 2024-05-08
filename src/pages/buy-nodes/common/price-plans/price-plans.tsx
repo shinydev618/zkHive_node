@@ -38,7 +38,7 @@ export const PricePlans = ({
   setPlan,
   setETHPay,
 }: any) => {
-  const [selected, setSelected] = useState("full");
+  const [selected, setSelected] = useState("Full");
   useEffect(() => {
     if (plan) {
       setStep(1);
@@ -64,39 +64,39 @@ export const PricePlans = ({
         <h1>Choose zkHive Node plan below</h1>
       </div>
       <div className={`price_grid_buttons`}>
-        <button id="item-0" onClick={() => changeSelected("basic")}>
-          <span style={{ color: plan === "basic" ? "black" : "" }}>
-            {plan === "basic" && <CheckIcon />} Basic
+        <button id="item-0" onClick={() => changeSelected("Basic")}>
+          <span style={{ color: plan === "Basic" ? "black" : "" }}>
+            {plan === "Basic" && <CheckIcon />} Basic
           </span>
           <img
             src={
-              plan === "basic"
+              plan === "Basic"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
             alt=""
           />
         </button>
-        <button id="item-1" onClick={() => changeSelected("advanced")}>
-          <span style={{ color: plan === "advanced" ? "black" : "" }}>
-            {plan === "advanced" && <CheckIcon />} Advanced
+        <button id="item-1" onClick={() => changeSelected("Advanced")}>
+          <span style={{ color: plan === "Advanced" ? "black" : "" }}>
+            {plan === "Advanced" && <CheckIcon />} Advanced
           </span>
           <img
             src={
-              plan === "advanced"
+              plan === "Advanced"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
             alt=""
           />
         </button>
-        <button id="item-2" onClick={() => changeSelected("full")}>
-          <span style={{ color: plan === "full" ? "black" : "" }}>
-            {plan === "full" && <CheckIcon />} Full
+        <button id="item-2" onClick={() => changeSelected("Full")}>
+          <span style={{ color: plan === "Full" ? "black" : "" }}>
+            {plan === "Full" && <CheckIcon />} Full
           </span>
           <img
             src={
-              plan === "full"
+              plan === "Full"
                 ? "/assets/images/price-plan-button-fill.png"
                 : "/assets/images/price-plan-button.png"
             }
@@ -113,9 +113,9 @@ export const PricePlans = ({
             items={PriceList1}
             onClick={() => {
               setETHPay(0.2);
-              setPlan("basic");
+              setPlan("Basic");
             }}
-            priceType="basic"
+            priceType="Basic"
           />
           <PriceCard
             selected={selected}
@@ -125,9 +125,9 @@ export const PricePlans = ({
             items={PriceList2}
             onClick={() => {
               setETHPay(0.5);
-              setPlan("advanced");
+              setPlan("Advanced");
             }}
-            priceType="advanced"
+            priceType="Advanced"
           />
           <PriceCard
             selected={selected}
@@ -137,9 +137,9 @@ export const PricePlans = ({
             items={PriceList3}
             onClick={() => {
               setETHPay(1);
-              setPlan("full");
+              setPlan("Full");
             }}
-            priceType="full"
+            priceType="Full"
           />
         </div>
       ) : (
