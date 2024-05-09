@@ -22,7 +22,7 @@ export const Checked = ({ setStep, step }: Props) => {
       // console.log("myBalanceZKHive:", myBalanceZKHive);
       // console.log("totalSupply:", totalSupply);
 
-      console.log("hold %:", myBalanceZKHive / totalSupply);
+      // console.log("hold %:", myBalanceZKHive / totalSupply);
       if ((myBalanceZKHive / totalSupply) * 100 < 0.25) {
         return NotificationManager.warning(
           `You hold ${

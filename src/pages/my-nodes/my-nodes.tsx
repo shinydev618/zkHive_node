@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { PlusIcon } from "../../icons";
 import { NodeCard } from "./components";
 import { NodeGrid, Wrapper } from "./style";
@@ -11,7 +11,6 @@ export const MyNodes = () => {
   const { dataMyNode }: any = useContext(RefContext);
   const navigate = useNavigate();
 
-  const [lengthMyNode, setLengthMyNode] = useState(dataMyNode.length);
   const handleSeeMore = () => {};
 
   return (
@@ -38,7 +37,7 @@ export const MyNodes = () => {
             </button>
           </NodeGrid>
           )
-          {lengthMyNode > 5 ? (
+          {dataMyNode?.length > 5 ? (
             <button
               data-aos="fade-up"
               className="see_more"

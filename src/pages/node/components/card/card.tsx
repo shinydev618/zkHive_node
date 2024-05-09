@@ -68,7 +68,9 @@ export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
         resClaim.data.deadline,
         resClaim.data.sig
       );
+
       await resContractClaim.wait();
+
       setProcess(false);
     } catch (error) {
       setProcess(false);

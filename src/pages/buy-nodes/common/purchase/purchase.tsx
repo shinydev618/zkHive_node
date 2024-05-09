@@ -7,10 +7,11 @@ import {
 import { PurchaseUI } from "./style";
 import { Props } from "./types";
 import { NotificationManager } from "react-notifications";
-import { getBalance, shortFloat } from "../../../../libs/fucntions";
+import { getBalance, getMyNode, shortFloat } from "../../../../libs/fucntions";
 import { parseEther } from "ethers/lib/utils";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { RefContext } from "../../../../libs/RefContext";
 
 export const Purchase = ({ setStep, ethPay, plan }: Props) => {
   const { isConnected, address } = useAccount();
@@ -20,7 +21,7 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
     address: address,
   });
   const { sendTransactionAsync } = useSendTransaction();
-
+  const { setDataMyNode }: any = useContext(RefContext);
   const [isProcess, setProcess] = useState(false);
 
   const handleNextStep = async () => {
@@ -97,9 +98,11 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
               txId: hash,
             }
           )
-          .then((res) => {
+          .then(async (res) => {
             // console.log(res.data);
             if (res.data !== null || res.data !== undefined) {
+              const resMyNode = await getMyNode(address);
+              setDataMyNode(resMyNode);
               setStep(4);
             }
             setProcess(false);
