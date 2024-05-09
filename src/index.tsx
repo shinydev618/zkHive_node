@@ -13,7 +13,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import reportWebVitals from "./reportWebVitals";
 
 import App from "./App";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RefContextProvider from "./libs/RefContext";
@@ -39,7 +39,7 @@ const config = getDefaultConfig({
 root.render(
   <React.StrictMode>
     <RefContextProvider>
-      <HashRouter>
+      <BrowserRouter>
         <WagmiProvider config={config}>
           <QueryClientProvider client={queryClient}>
             <RainbowKitProvider>
@@ -48,7 +48,7 @@ root.render(
             </RainbowKitProvider>
           </QueryClientProvider>
         </WagmiProvider>
-      </HashRouter>
+      </BrowserRouter>
     </RefContextProvider>
   </React.StrictMode>
 );
