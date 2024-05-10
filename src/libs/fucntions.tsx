@@ -28,7 +28,7 @@ export const getMyNode = async (address: any) => {
       }
     );
     const nodeIds = resGetMyNode.data.nodeIds;
-    console.log("my nodeIds:", nodeIds);
+    // console.log("my nodeIds:", nodeIds);
 
     let arrayNodeInfo: any = [];
     for (var i = 0; i < nodeIds.length; i++) {
