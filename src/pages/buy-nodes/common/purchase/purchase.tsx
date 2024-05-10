@@ -55,10 +55,10 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
       }
 
       // console.log("ethBalance:", ethBalance.data.formatted);
-      if (ethBalance.data.formatted < ethPay) {
+      if (ethBalance?.data?.formatted < ethPay) {
         return NotificationManager.warning(
           `Your ETH balance is ${shortFloat(
-            parseFloat(ethBalance.data.formatted),
+            parseFloat(ethBalance?.data?.formatted),
             2
           )}, it should be greater than ${ethPay} ETH.`,
           "",
@@ -76,7 +76,7 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
           },
         }
       );
-      console.log("resPaymentAddress:", resPaymentAddress.data.paymentAddress);
+      // console.log("resPaymentAddress:", resPaymentAddress.data.paymentAddress);
 
       const hash = await sendTransactionAsync({
         // to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
