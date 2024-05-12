@@ -4,13 +4,30 @@ import { Route, Routes } from "react-router-dom";
 import { BuyNodes, MyNodes, Node } from "./pages";
 import HomePage from "./pages/home/home";
 import { Subscription } from "./pages/subscription";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useAccount } from "wagmi";
+import { getMyNode } from "./libs/fucntions";
+import { RefContext } from "./libs/RefContext";
 
 const App = () => {
   const [isLoading, setLoading] = useState(true);
   const someRequest = (): Promise<void> => {
     return new Promise((resolve) => setTimeout(() => resolve(), 1500));
   };
+  const { isConnected, address } = useAccount();
+  const { setDataMyNode }: any = useContext(RefContext);
+
+  const handleGetMyNode = async (address: any) => {
+    // console.log("connected address:", address);
+    const resMyNode = await getMyNode(address);
+    setDataMyNode(resMyNode);
+  };
+
+  useEffect(() => {
+    if (isConnected) {
+      handleGetMyNode(address);
+    }
+  }, [isConnected, address]);
 
   useEffect(() => {
     someRequest().then(() => {

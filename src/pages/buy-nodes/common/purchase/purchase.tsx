@@ -76,15 +76,15 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
           },
         }
       );
-      // console.log("resPaymentAddress:", resPaymentAddress.data.paymentAddress);
+      console.log("resPaymentAddress:", resPaymentAddress.data.paymentAddress);
 
       const hash = await sendTransactionAsync({
-        // to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
-        to: resPaymentAddress.data.paymentAddress as any,
+        to: process.env.REACT_APP_ADDRESS_WALLET_PAY as any,
+        // to: resPaymentAddress.data.paymentAddress as any,
         // value: parseEther((0.01).toString() as any) as any,
         value: parseEther(ethPay.toString()) as any,
       });
-      // console.log("hash:", hash);
+      console.log("hash:", hash);
       const txReceipt = await publicClient?.waitForTransactionReceipt({ hash });
       // console.log("txReceipt?.status:", txReceipt?.status);
 

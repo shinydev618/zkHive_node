@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PlusIcon } from "../../icons";
 import { NodeCard } from "./components";
 import { NodeGrid, Wrapper } from "./style";
@@ -11,7 +11,13 @@ export const MyNodes = () => {
   const { dataMyNode }: any = useContext(RefContext);
   const navigate = useNavigate();
 
-  const handleSeeMore = () => {};
+  const [dataNode, setDataNode] = useState(dataMyNode.slice(0, 5));
+  const [isClickedMore, setClickedMore] = useState(false);
+
+  const handleSeeMore = () => {
+    setClickedMore(true);
+    setDataNode(dataMyNode);
+  };
 
   return (
     <Wrapper>
@@ -19,7 +25,7 @@ export const MyNodes = () => {
         <div className="container content">
           <h1>My Nodes</h1>(
           <NodeGrid>
-            {dataMyNode?.map((item: any, index: any) => (
+            {dataNode?.map((item: any, index: any) => (
               <NodeCard key={index} data={item} />
             ))}
             <button
@@ -37,7 +43,7 @@ export const MyNodes = () => {
             </button>
           </NodeGrid>
           )
-          {dataMyNode?.length > 5 ? (
+          {dataMyNode?.length > 5 && !isClickedMore ? (
             <button
               data-aos="fade-up"
               className="see_more"

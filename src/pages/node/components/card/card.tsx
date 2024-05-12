@@ -60,17 +60,17 @@ export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
 
       // console.log("resclaim:", resClaim.data);
 
-      const resMyNode = await getMyNode(address);
-      setDataMyNode(resMyNode);
-
       const resContractClaim = await contractZKHIVEClaim.claimRewards(
         resClaim.data.totalRewards,
         resClaim.data.deadline,
         resClaim.data.sig
       );
 
+      // console.log("resContractClaim:", resContractClaim);
       await resContractClaim.wait();
 
+      const resMyNode = await getMyNode(address);
+      setDataMyNode(resMyNode);
       setProcess(false);
     } catch (error) {
       setProcess(false);
