@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { PlusIcon } from "../../icons";
 import { NodeCard } from "./components";
 import { NodeGrid, Wrapper } from "./style";
@@ -11,12 +11,12 @@ export const MyNodes = () => {
   const { dataMyNode }: any = useContext(RefContext);
   const navigate = useNavigate();
 
-  const [dataNode, setDataNode] = useState(dataMyNode.slice(0, 5));
   const [isClickedMore, setClickedMore] = useState(false);
+  const [length, setLength] = useState(5);
 
   const handleSeeMore = () => {
+    setLength(dataMyNode.length - 1);
     setClickedMore(true);
-    setDataNode(dataMyNode);
   };
 
   return (
@@ -25,7 +25,7 @@ export const MyNodes = () => {
         <div className="container content">
           <h1>My Nodes</h1>(
           <NodeGrid>
-            {dataNode?.map((item: any, index: any) => (
+            {dataMyNode.slice(0, length)?.map((item: any, index: any) => (
               <NodeCard key={index} data={item} />
             ))}
             <button

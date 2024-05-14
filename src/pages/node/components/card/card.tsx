@@ -8,6 +8,7 @@ import { getMyNode } from "../../../../libs/fucntions";
 import { RefContext } from "../../../../libs/RefContext";
 import { zkHiveClaim } from "../../../../libs/abi";
 import { ethers } from "ethers";
+import { stringify } from "querystring";
 
 export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
   const { isConnected, address } = useAccount();
@@ -74,7 +75,7 @@ export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
       setProcess(false);
     } catch (error) {
       setProcess(false);
-      console.log("error of claim", error);
+      console.log("error of claim:", JSON.stringify(error));
     }
     // return NotificationManager.warning("Coming soon.", "", 5000);
   };
