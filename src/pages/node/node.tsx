@@ -77,6 +77,7 @@ export const Node = () => {
             <Card
               title={"Rewards"}
               value={state?.earnings + " " + state?.earningsType}
+              nodeId={state?.id}
               isButton
               buttonTitle="Claim Now"
               // title="Node Uptime"

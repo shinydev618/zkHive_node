@@ -6,4 +6,5 @@ export type Props = {
   title?: string | ReactNode;
   isButton?: boolean;
   buttonTitle?: string;
+  nodeId?: string;
 };

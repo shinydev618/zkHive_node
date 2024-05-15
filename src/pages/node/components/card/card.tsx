@@ -10,7 +10,14 @@ import { zkHiveClaim } from "../../../../libs/abi";
 import { ethers } from "ethers";
 import { stringify } from "querystring";
 
-export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
+export const Card = ({
+  src,
+  value,
+  title,
+  isButton,
+  buttonTitle,
+  nodeId,
+}: Props) => {
   const { isConnected, address } = useAccount();
 
   const [isProcess, setProcess] = useState(false);
@@ -56,6 +63,7 @@ export const Card = ({ src, value, title, isButton, buttonTitle }: Props) => {
           "/submitClaimRequest",
         {
           user: address,
+          nodeId: nodeId,
         }
       );
 
