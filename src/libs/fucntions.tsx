@@ -6,11 +6,11 @@ import { formatUnits } from "ethers/lib/utils";
 const contractABI = abiZKHIVE;
 
 const provider = new ethers.providers.InfuraProvider(
-  process.env.REACT_APP_IS_TESTNET ? "sepolia" : "mainnet",
+  process.env.REACT_APP_IS_TESTNET === "true" ? "sepolia" : "mainnet",
   process.env.REACT_APP_KEY_INFRA
 );
 const contractZKHIVE = new ethers.Contract(
-  process.env.REACT_APP_IS_TESTNET
+  process.env.REACT_APP_IS_TESTNET === "true"
     ? (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TOKEN_TEST as any)
     : (process.env.REACT_APP_ADDRESS_CONTRACT_ZKHIVE_TOKEN_MAIN as any),
   contractABI,

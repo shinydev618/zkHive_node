@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 const queryClient = new QueryClient();
-const network = process.env.REACT_APP_IS_TESTNET ? sepolia : mainnet;
+const network = process.env.REACT_APP_IS_TESTNET ==='true' ? sepolia : mainnet;
 
 const config = getDefaultConfig({
   appName: "zkHive Node",
