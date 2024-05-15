@@ -35,12 +35,14 @@ export const Purchase = ({ setStep, ethPay, plan }: Props) => {
 
     try {
       const { myBalanceZKHive, totalSupply }: any = await getBalance(address);
-      if ((myBalanceZKHive / totalSupply) * 100 < 0.25) {
+      if ((myBalanceZKHive / totalSupply) * 100 < 0.02) {
         NotificationManager.warning(
-          `You hold ${
-            myBalanceZKHive / totalSupply
-          }% total supply now, it should be greater than 0.25%.`,
+          `You hold ${myBalanceZKHive} $ZKHIVE.`,
           "",
+          // `You hold ${
+          //   myBalanceZKHive / totalSupply
+          // }% total supply now, it should be greater than 0.02%.`,
+          // "",
           5000
         );
         return setStep(2);

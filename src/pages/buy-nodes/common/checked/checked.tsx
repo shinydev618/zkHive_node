@@ -23,11 +23,9 @@ export const Checked = ({ setStep, step }: Props) => {
       // console.log("totalSupply:", totalSupply);
 
       // console.log("hold %:", myBalanceZKHive / totalSupply);
-      if ((myBalanceZKHive / totalSupply) * 100 < 0.25) {
+      if ((myBalanceZKHive / totalSupply) * 100 < 0.02) {
         return NotificationManager.warning(
-          `You hold ${
-            myBalanceZKHive / totalSupply
-          }% total supply now. ( Your balance: ${myBalanceZKHive} ZKHIVE ).`,
+          `You hold ${myBalanceZKHive} $ZKHIVE.`,
           "",
           5000
         );
@@ -54,7 +52,7 @@ export const Checked = ({ setStep, step }: Props) => {
   return (
     <CheckedUI data-aos="fade-up">
       <div className="checked_title_wrapper">
-        <h1>Do you hold at least a 0.25% Supply of ZKHIVE tokens?</h1>
+        <h1>Do you hold at least 20,000 $ZKHIVE?</h1>
       </div>
       <div className="checked_grid_buttons">
         <button onClick={() => handleCheck()}>
