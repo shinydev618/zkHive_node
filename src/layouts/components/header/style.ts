@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const Header = styled("header")`
+export const Header = styled('header')`
   min-height: 90px;
   width: 100%;
   background: #363607;
@@ -66,7 +66,7 @@ export const Header = styled("header")`
 
           position: relative;
           &::before {
-            content: "";
+            content: '';
             width: 0%;
             height: 1px;
             background: #fbda00;
@@ -182,4 +182,4 @@ export const Header = styled("header")`
   @media (max-width: 750px) {
     padding: 10px 1rem;
   }
-`;
+`

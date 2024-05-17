@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("../public/assets/fonts/Inter-Regular.ttf");
+  font-family: 'Inter';
+  src: url('../public/assets/fonts/Inter-Regular.ttf');
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -70,4 +70,8 @@ body {
     max-width: 100%;
     margin: 0 auto;
   }
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  border-radius: 20px !important;
 }
