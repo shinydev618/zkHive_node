@@ -16,7 +16,7 @@ const PriceList2 = [
   "Anti Virus Support",
   "AntiMalware Support",
   "Viruses Scans",
-  "Mawares Scans",
+  "Malware Scans",
   "Medium Priority",
   "$zkHive Rewards",
 ];
@@ -25,7 +25,7 @@ const PriceList3 = [
   "Anti Virus Support",
   "AntiMalware Support",
   "Cloud Support",
-  "Mawares Scans",
+  "Malware Scans",
   "Malwares Scans",
   "High Priority",
   "$zkHive Rewards",
